@@ -3,6 +3,20 @@
    Plain CSS · responsive (desktop / tablet / mobile)
    =================================================================== */
 
+/* -------------------------------------------------------------------
+   SECTION INDEX
+   01. Theme variables & global reset
+   02. Typography utility classes
+   03. Buttons
+   04. Cards, image placeholders & reveal animation
+   05. Layout helpers (wrap / section / grid)
+   06. Navigation / header
+   07. Hero / banner
+   08. Responsive behavior
+   09. Forms
+   10. Sliders, offers & misc utilities
+   ------------------------------------------------------------------- */
+
 :root {
   --lime: #8cc63f;
   --lime-bright: #a4d65e;
@@ -112,6 +126,7 @@ p {
   justify-content: center;
 }
 
+/* ---------------- 05. Layout helpers (wrap / section / grid / utilities) ---------------- */
 .wrap {
   width: 100%;
   max-width: var(--maxw);
@@ -209,6 +224,24 @@ p {
   background: #25d366;
   color: #06351a;
   box-shadow: 0 10px 24px rgba(37, 211, 102, 0.34);
+}
+
+/* ---------------- 04. Cards, image placeholders & reveal animation ---------------- */
+
+.ph {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #29551f 0%, #3a6e2a 46%, #5d8f3a 100%);
+  color: #eaf6dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
 }
 .btn-wa:hover {
   transform: translateY(-2px);
@@ -556,7 +589,7 @@ body::-webkit-scrollbar-thumb {
   color: var(--forest-2);
 }
 
-/* ---------------- Responsive ---------------- */
+/* ---------------- 08. Responsive behavior ---------------- */
 .mobile-toggle {
   display: none;
 }
@@ -645,6 +678,23 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------- 06. Navigation / header ---------------- */
 #nav {
   position: fixed;
   top: 0;
@@ -696,6 +746,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
+
 #nav.scrolled .nav-link {
   color: var(--forest);
   text-shadow: none;
@@ -743,99 +794,459 @@ body::-webkit-scrollbar-thumb {
   border-bottom: 1px solid var(--line);
 }
 
-.hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.hero-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
+/* ---------------- 07. Hero / banner section ---------------- */
+
+
+
+
+
+
+
+/* ==========================
+   HERO SECTION UPDATED
+========================== */
+
+/* ==========================
+   PREMIUM HERO SECTION
+========================== */
+/* ==========================
+   PREMIUM WOW HERO
+========================== */
+
+/* ==========================
+   PREMIUM HERO V2
+========================== */
+
+/* ==========================
+   PREMIUM HERO SECTION V2
+========================== */
+
+/* ==========================
+   PREMIUM HERO FINAL FIX
+========================== */
+
+.hero{
+  position:relative;
+  background:
+  linear-gradient(
     180deg,
-    rgba(8, 28, 12, 0.62) 0%,
-    rgba(8, 28, 12, 0.28) 34%,
-    rgba(8, 28, 12, 0.45) 62%,
-    rgba(8, 24, 10, 0.94) 100%
+    #07140a 0%,
+    #0d1f11 100%
   );
-}
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  padding-top: 128px;
-  padding-bottom: 54px;
-}
-.hero-copy {
-  max-width: 900px;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 18px;
-  border-radius: 100px;
-  background: rgba(140, 198, 63, 0.2);
-  border: 1px solid rgba(164, 214, 94, 0.5);
-  color: #dff3c2;
-  backdrop-filter: blur(6px);
-  font-family: var(--head);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.hero-badge .ico {
-  width: 17px;
-  height: 17px;
-}
-.hero-h1 {
-  color: #fff;
-  font-size: clamp(38px, 6.2vw, 84px);
-  margin-top: 20px;
-  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.55);
-}
-.hero-script {
-  color: var(--gold);
-  font-size: clamp(24px, 3vw, 40px);
-  margin-top: 12px;
-  font-weight: 700;
-  line-height: 1.1;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.45);
-}
-.hero-sub {
-  color: rgba(255, 255, 255, 0.93);
-  font-size: clamp(16px, 1.5vw, 20px);
-  line-height: 1.6;
-  max-width: 620px;
-  margin-top: 20px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-}
-.hero-stats {
-  display: flex;
-  gap: 36px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-.hero-stat-big {
-  font-size: clamp(28px, 3.2vw, 42px);
-  color: var(--lime-bright);
-}
-.hero-stat-small {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.82);
-  margin-top: 2px;
+  padding:140px 0 90px;
+  overflow:hidden;
 }
 
+.hero::before{
+  content:"";
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:
+  radial-gradient(
+    circle,
+    rgba(181,239,80,.12),
+    transparent 70%
+  );
+  top:-200px;
+  right:-100px;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(
+    to right,
+    rgba(7,20,10,.92),
+    rgba(7,20,10,.72)
+  );
+}
+
+.hero-container{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:70px;
+}
+
+/* ======================
+   LEFT SIDE
+====================== */
+
+.hero-left{
+  flex:1;
+  max-width:620px;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 24px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:700;
+  backdrop-filter:blur(18px);
+}
+
+.hero-title{
+  margin-top:28px;
+  font-size:clamp(54px,6vw,60px);
+  line-height:.95;
+  font-weight:800;
+  color:#fff;
+}
+
+.hero-title span{
+  display:block;
+  color:#b5ef50;
+}
+
+.hero-subtitle{
+  margin-top:24px;
+  color:rgba(255,255,255,.88);
+  font-size:19px;
+  line-height:1.9;
+}
+
+/* ======================
+   TRUST CHIPS
+====================== */
+
+.trust-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
+}
+
+.chip{
+  padding:14px 20px;
+  border-radius:18px;
+  background:#132016;
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:600;
+}
+
+/* ======================
+   BUTTONS
+====================== */
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:36px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  min-width:260px;
+  height:68px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-size:18px;
+  font-weight:800;
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.hero-btn:hover{
+  transform:translateY(-5px);
+}
+
+.quote-btn{
+  background:#f5b53f;
+  color:#111;
+  box-shadow:
+  0 15px 35px rgba(245,181,63,.28);
+}
+
+.whatsapp-btn{
+  background:#25D366;
+  color:#fff;
+  box-shadow:
+  0 15px 35px rgba(37,211,102,.25);
+}
+
+.wa-circle{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ======================
+   RIGHT IMAGE
+====================== */
+
+.hero-right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-image-wrapper{
+  position:relative;
+  width:100%;
+  max-width:540px;
+}
+
+.hero-image{
+  width:100%;
+  height:640px;
+  object-fit:cover;
+  border-radius:36px;
+  box-shadow:
+  0 30px 80px rgba(0,0,0,.35);
+}
+
+/* floating review */
+
+.floating-review{
+  position:absolute;
+  top:35px;
+  left:-45px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+  border-radius:24px;
+  padding:22px 28px;
+  color:#fff;
+}
+
+.floating-review h3{
+  font-size:38px;
+  color:#b5ef50;
+  font-weight:900;
+  margin:0;
+}
+
+.floating-review p{
+  margin-top:6px;
+  color:#fff;
+}
+
+/* support card */
+
+.floating-support{
+  position:absolute;
+  bottom:35px;
+  right:-35px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:rgba(255,255,255,.12);
+  border-radius:24px;
+  padding:18px 22px;
+  color:#fff;
+  backdrop-filter:blur(18px);
+}
+
+.floating-support i{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ======================
+   STATS FIXED
+====================== */
+
+.hero-stats-wrap{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.stat-box{
+  background:#122116;
+  border:1px solid rgba(181,239,80,.16);
+  border-radius:28px;
+  padding:40px 30px;
+  text-align:center;
+  transition:.3s;
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.22);
+}
+
+.stat-box:hover{
+  transform:translateY(-8px);
+}
+
+.stat-box h3{
+  font-size:56px;
+  font-weight:900;
+  color:#b5ef50;
+  margin:0;
+  line-height:1;
+}
+
+.stat-box p{
+  margin-top:12px;
+  color:#fff;
+  font-size:18px;
+  font-weight:600;
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media(max-width:991px){
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-left{
+    max-width:100%;
+  }
+
+  .trust-chips,
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero-image-wrapper{
+    max-width:420px;
+  }
+
+  .hero-image{
+    height:500px;
+  }
+
+  .floating-review{
+    left:10px;
+    top:-20px;
+  }
+
+  .floating-support{
+    right:10px;
+    bottom:-20px;
+  }
+
+  .hero-stats-wrap{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:576px){
+
+  .hero-title{
+    font-size:44px;
+    line-height:1.05;
+  }
+
+  .hero-subtitle{
+    font-size:16px;
+  }
+
+  .hero-btn{
+    width:100%;
+    min-width:unset;
+  }
+
+  .hero-stats-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image{
+    height:420px;
+  }
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   FORCE VISIBILITY FIX
+========================== */
+
+.hero{
+  isolation:isolate;
+}
+
+.hero-stats-wrap,
+.stat-box,
+.stat-box h3,
+.stat-box p{
+  opacity:1 !important;
+  visibility:visible !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+}
+
+/* fix overlay issue */
+.hero-overlay{
+  z-index:0 !important;
+  pointer-events:none;
+}
+
+.hero-container,
+.hero-stats-wrap{
+  position:relative;
+  z-index:5 !important;
+}
+
+.stat-box{
+  background:#162517 !important;
+  border:1px solid rgba(181,239,80,.22) !important;
+}
+
+.stat-box h3{
+  color:#b5ef50 !important;
+}
+
+.stat-box p{
+  color:#ffffff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------- 08. Inline form section (#plan) ---------------- */
 .inline-form-sec {
   background: var(--gold);
   padding: clamp(40px, 5vw, 64px) 0;
@@ -862,6 +1273,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: var(--shadow-lg);
 }
 
+/* ---------------- 09. About section (#about) ---------------- */
 .about-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -899,6 +1311,7 @@ body::-webkit-scrollbar-thumb {
   margin: 26px 0 28px;
 }
 
+/* ---------------- 10. Trusted section */
 .trusted {
   background: var(--lime);
   padding: 28px 0;
@@ -932,6 +1345,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100px;
 }
 
+/* ---------------- 11. Packages section (#packages / #tanzania) ---------------- */
 .pkg-title {
   font-weight: 800;
   font-size: clamp(28px, 3.6vw, 46px);
@@ -941,6 +1355,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: -0.01em;
 }
 
+/* ---------------- 12. Destinations section (#destinations) ---------------- */
 .dest-head {
   display: flex;
   align-items: center;
@@ -995,6 +1410,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 3;
 }
 
+/* ---------------- 13. Why Us section (#whyus) ---------------- */
 .whyus-layout {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
@@ -1057,6 +1473,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100px;
 }
 
+/* ---------------- 14. Reviews section (#reviews) ---------------- */
 .testi-top {
   display: flex;
   justify-content: space-between;
@@ -1205,6 +1622,8 @@ body::-webkit-scrollbar-thumb {
   height: 18px;
   color: var(--lime-bright);
 }
+
+/* ---------------- 15. Offer section (#offer) ---------------- */
 .offer-box {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(164, 214, 94, 0.3);
@@ -1225,6 +1644,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 18px;
 }
 
+/* ---------------- 16. Quote section (#quote) ---------------- */
 .quote-sec {
   background: linear-gradient(165deg, var(--forest) 0%, var(--forest-2) 100%);
   overflow: hidden;
@@ -1294,6 +1714,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: var(--shadow-lg);
 }
 
+/* ---------------- 17. Partners section (#partners) ---------------- */
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -1318,6 +1739,7 @@ body::-webkit-scrollbar-thumb {
   object-fit: contain;
 }
 
+/* ---------------- 18. Footer section (#footer) ---------------- */
 #footer {
   background: var(--forest-2);
   color: #dfeccf;

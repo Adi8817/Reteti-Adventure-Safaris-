@@ -17,6 +17,22 @@
     ta: "https://www.tripadvisor.com/Attraction_Review-g294207-d27128058-Reviews-Reteti_Adventure_Safaris-Nairobi.html",
   };
 
+  /* ============================================================
+     LOCAL IMAGE SYSTEM
+     ---------------------------------------------------------------
+     All images are served from local folders.
+     To swap an image, replace the file on disk — no JS changes needed.
+
+     Folder structure expected:
+       assets/images/fallback.jpg               ← shown when any image fails to load
+       assets/images/destinations/              ← one jpg per destination
+       assets/images/activities/                ← one jpg per activity
+       assets/images/packages/                  ← one jpg per package card
+  ============================================================ */
+
+  /** Fallback shown when an <img> src fails to load */
+  var IMG_FALLBACK = "assets/images/fallback.jpg";
+
   /* ---------------- Icon set ---------------- */
   var A =
     'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
@@ -262,6 +278,7 @@
   }
 
   /* ---------------- Data ---------------- */
+
   var WHY_DESTINATION = [
     {
       icon: "value",
@@ -304,6 +321,7 @@
       text: "Capture wildlife, golden savannahs, hot air balloons and sunsets that few destinations on earth can match.",
     },
   ];
+
   var TRUSTED_CITIES = [
     "Mumbai",
     "Delhi",
@@ -313,6 +331,7 @@
     "Chennai",
     "Pune",
   ];
+
   var INCLUDES = [
     { icon: "lodge", label: "Hotel & Accommodation" },
     { icon: "food", label: "Indian Food" },
@@ -324,6 +343,11 @@
     { icon: "support", label: "24/7 On-trip Support" },
   ];
 
+  /* ----------------------------------------------------------------
+     PACKAGES
+     image  →  local path under assets/images/packages/
+     To swap: replace the file on disk, no JS change needed.
+  ---------------------------------------------------------------- */
   var KENYA_PACKAGES = [
     {
       name: "Magical Kenya Bush Safari",
@@ -333,7 +357,7 @@
       badge: "Best Seller",
       desc: "Maasai Mara, Lake Nakuru & Lake Naivasha — the classic Kenyan circuit packed with Big Five sightings.",
       highlights: ["Maasai Mara", "Lake Nakuru", "Lake Naivasha"],
-      image: "assets/images/backgroundimage.jpg",
+      image: "assets/images/packages/package1.jpg",
     },
     {
       name: "Mara Migration Special",
@@ -343,7 +367,7 @@
       badge: "Seasonal",
       desc: "Time your trip with the Great Migration and witness thundering river crossings of wildebeest and zebra.",
       highlights: ["River Crossings", "Big Cats", "Balloon add-on"],
-      image: "assets/images/backgroundimage.jpg",
+      image: "assets/images/packages/package2.jpg",
     },
     {
       name: "Finest of Kenya Bush Safari",
@@ -353,9 +377,10 @@
       badge: "Grand Tour",
       desc: "Amboseli to Mara via Mt Kenya & Sweetwaters — elephants beneath Kilimanjaro and rhino sanctuaries.",
       highlights: ["Amboseli", "Mt Kenya", "Sweetwaters"],
-      image: "assets/images/backgroundimage.jpg",
+      image: "assets/images/packages/package3.jpg",
     },
   ];
+
   var TANZANIA_PACKAGES = [
     {
       name: "Ngorongoro & Serengeti Safari",
@@ -365,7 +390,7 @@
       badge: "Iconic",
       desc: "Descend into the Ngorongoro Crater and roam the endless Serengeti — Africa's most legendary arenas.",
       highlights: ["Ngorongoro", "Serengeti", "Tarangire"],
-      image: "assets/images/backgroundimage.jpg",
+      image: "assets/images/packages/package4.jpg",
     },
     {
       name: "Tarangire, Manyara & Eyasi",
@@ -375,7 +400,7 @@
       badge: "Short Escape",
       desc: "Giant baobabs, tree-climbing lions and the cultural Lake Eyasi region — compact Northern Tanzania.",
       highlights: ["Tarangire", "Lake Manyara", "Lake Eyasi"],
-      image: "assets/images/backgroundimage.jpg",
+      image: "assets/images/packages/package5 .jpg",
     },
     {
       name: "Northern Wilds Adventure",
@@ -385,29 +410,116 @@
       badge: "Explorer",
       desc: "The full Northern Circuit — Tarangire, Ngorongoro, Lake Natron's flamingos and the Serengeti.",
       highlights: ["Lake Natron", "Ngorongoro", "Serengeti"],
-      image: "assets/images/backgroundimage.jpg",
+      image: "assets/images/packages/package6.jpg",
     },
   ];
+
+  /* ----------------------------------------------------------------
+     DESTINATIONS
+     image  →  local path under assets/images/destinations/
+  ---------------------------------------------------------------- */
   var KENYA_DEST = [
-    { name: "Maasai Mara", tag: "Great Migration & Big Cats", kw: "maasai,mara,lion", lock: 31 },
-    { name: "Amboseli", tag: "Elephants & Kilimanjaro views", kw: "amboseli,elephant,kilimanjaro", lock: 32 },
-    { name: "Lake Nakuru", tag: "Flamingos & Rhino", kw: "flamingo,lake,nakuru", lock: 33 },
-    { name: "Nairobi National Park", tag: "Wildlife beside the city", kw: "nairobi,rhino,park", lock: 34 },
-    { name: "Lake Naivasha", tag: "Boat safaris & hippos", kw: "hippo,lake,naivasha", lock: 35 },
-    { name: "Samburu Reserve", tag: "Rare northern species", kw: "samburu,giraffe,kenya", lock: 36 },
-    { name: "Tsavo", tag: "Red elephants & vast plains", kw: "tsavo,elephant,red", lock: 37 },
-    { name: "Diani Beach", tag: "White-sand coast", kw: "diani,beach,kenya", lock: 38 },
+    {
+      name: "Maasai Mara",
+      tag: "Great Migration & Big Cats",
+      icon: "camera",
+      image: "assets/images/destinations/img1.jpg",
+    },
+    {
+      name: "Amboseli",
+      tag: "Elephants & Kilimanjaro views",
+      icon: "camera",
+      image: "assets/images/destinations/img2.jpg",
+    },
+    {
+      name: "Lake Nakuru",
+      tag: "Flamingos & Rhino",
+      icon: "camera",
+      image: "assets/images/destinations/img3.jpg",
+    },
+    {
+      name: "Nairobi National Park",
+      tag: "Wildlife beside the city",
+      icon: "camera",
+      image: "assets/images/destinations/img4.jpg",
+    },
+    {
+      name: "Lake Naivasha",
+      tag: "Boat safaris & hippos",
+      icon: "camera",
+      image: "assets/images/destinations/img5.jpg",
+    },
+    {
+      name: "Samburu Reserve",
+      tag: "Rare northern species",
+      icon: "camera",
+      image: "assets/images/destinations/img6.jpg",
+    },
+    {
+      name: "Tsavo",
+      tag: "Red elephants & vast plains",
+      icon: "camera",
+      image: "assets/images/destinations/img7.jpg",
+    },
+    {
+      name: "Diani Beach",
+      tag: "White-sand coast",
+      icon: "camera",
+      image: "assets/images/destinations/img8.jpg",
+    },
   ];
+
   var TANZANIA_DEST = [
-    { name: "Serengeti", tag: "Endless plains & predators", kw: "serengeti,lion,plains", lock: 41 },
-    { name: "Ngorongoro Crater", tag: "A natural wildlife arena", kw: "ngorongoro,crater", lock: 42 },
-    { name: "Tarangire", tag: "Giant baobabs & elephants", kw: "tarangire,baobab,elephant", lock: 43 },
-    { name: "Lake Manyara", tag: "Tree-climbing lions", kw: "manyara,lion,tree", lock: 44 },
-    { name: "Zanzibar", tag: "Turquoise beach paradise", kw: "zanzibar,beach,island", lock: 45 },
-    { name: "Lake Natron", tag: "Flamingo-pink shores", kw: "natron,flamingo,lake", lock: 46 },
-    { name: "Mt Kilimanjaro", tag: "Africa's highest peak", kw: "kilimanjaro,mountain,tanzania", lock: 47 },
-    { name: "Mahale Mountains", tag: "Wild chimpanzees", kw: "mahale,chimpanzee,forest", lock: 48 },
+    {
+      name: "Serengeti",
+      tag: "Endless plains & predators",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
+    {
+      name: "Ngorongoro Crater",
+      tag: "A natural wildlife arena",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
+    {
+      name: "Tarangire",
+      tag: "Giant baobabs & elephants",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
+    {
+      name: "Lake Manyara",
+      tag: "Tree-climbing lions",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
+    {
+      name: "Zanzibar",
+      tag: "Turquoise beach paradise",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
+    {
+      name: "Lake Natron",
+      tag: "Flamingo-pink shores",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
+    {
+      name: "Mt Kilimanjaro",
+      tag: "Africa's highest peak",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
+    {
+      name: "Mahale Mountains",
+      tag: "Wild chimpanzees",
+      icon: "camera",
+      image: "assets/images/destinations/backgroundimage.jpg",
+    },
   ];
+
   var WHY_US = [
     {
       icon: "food",
@@ -440,49 +552,200 @@
       text: "We handle accommodation, safari vehicles, park fees, airport transfers and daily logistics so you focus on the adventure.",
     },
   ];
+
+  /* ----------------------------------------------------------------
+     ACTIVITIES
+     image  →  local path under assets/images/activities/
+  ---------------------------------------------------------------- */
   var ACTIVITIES = [
-    { icon: "lion", title: "Exciting Game Drives", text: "Spot lions, elephants, leopards, cheetahs, giraffes and zebras. Morning and evening drives offer the best sightings.", kw: "safari,jeep,lion", lock: 51 },
-    { icon: "boat", title: "Boat Safaris", text: "Get up close to hippos, crocodiles and colourful birdlife from lakes and rivers — a relaxing, unique perspective.", kw: "boat,hippo,africa", lock: 52 },
-    { icon: "walk", title: "Guided Walking Safaris", text: "Step into the wild on foot with expert guides and discover tracks, plants and birds missed on game drives.", kw: "walking,safari,bush", lock: 53 },
-    { icon: "balloon", title: "Hot Air Balloon Safaris", text: "Float above the Mara or Serengeti at sunrise for panoramic views of wildlife and endless plains.", kw: "hot,air,balloon,safari", lock: 54 },
-    { icon: "camera", title: "Wildlife Photography Tours", text: "Capture stunning photographs of Africa's iconic animals, dramatic landscapes and unforgettable sunsets.", kw: "wildlife,photography,camera", lock: 55 },
-    { icon: "culture", title: "Cultural Village Visits", text: "Meet local Maasai communities, learn their traditions and experience authentic African hospitality.", kw: "maasai,village,culture", lock: 56 },
-    { icon: "bird", title: "Bird Watching & Nature Tours", text: "East Africa is home to hundreds of bird species — a paradise for bird lovers and nature enthusiasts.", kw: "bird,africa,wildlife", lock: 57 },
-    { icon: "beach", title: "Zanzibar Beach Extension", text: "Combine your safari with a relaxing beach holiday in Zanzibar, famed for white sands and clear waters.", kw: "zanzibar,beach,ocean", lock: 58 },
-    { icon: "big5", title: "Big Five Safari Experience", text: "Challenge yourself to spot Lion, Leopard, Elephant, Rhino and Buffalo — all on one adventure.", kw: "rhino,buffalo,safari", lock: 59 },
+    {
+      icon: "lion",
+      title: "Exciting Game Drives",
+      text: "Spot lions, elephants, leopards, cheetahs, giraffes and zebras. Morning and evening drives offer the best sightings.",
+      image: "assets/images/activities/activities2.jpg",
+    },
+    {
+      icon: "boat",
+      title: "Boat Safaris",
+      text: "Get up close to hippos, crocodiles and colourful birdlife from lakes and rivers — a relaxing, unique perspective.",
+      image: "assets/images/activities/activities3.jpg",
+    },
+    {
+      icon: "walk",
+      title: "Guided Walking Safaris",
+      text: "Step into the wild on foot with expert guides and discover tracks, plants and birds missed on game drives.",
+      image: "assets/images/activities/activities4.jpg",
+    },
+    {
+      icon: "balloon",
+      title: "Hot Air Balloon Safaris",
+      text: "Float above the Mara or Serengeti at sunrise for panoramic views of wildlife and endless plains.",
+      image: "assets/images/activities/activities5.jpg",
+    },
+    {
+      icon: "camera",
+      title: "Wildlife Photography Tours",
+      text: "Capture stunning photographs of Africa's iconic animals, dramatic landscapes and unforgettable sunsets.",
+      image: "assets/images/activities/activities6.jpg",
+    },
+    {
+      icon: "culture",
+      title: "Cultural Village Visits",
+      text: "Meet local Maasai communities, learn their traditions and experience authentic African hospitality.",
+      image: "assets/images/activities/activities7.jpg",
+    },
+    {
+      icon: "bird",
+      title: "Bird Watching & Nature Tours",
+      text: "East Africa is home to hundreds of bird species — a paradise for bird lovers and nature enthusiasts.",
+      image: "assets/images/activities/activities8.jpg",
+    },
+    {
+      icon: "beach",
+      title: "Zanzibar Beach Extension",
+      text: "Combine your safari with a relaxing beach holiday in Zanzibar, famed for white sands and clear waters.",
+      image: "assets/images/activities/activities9.jpg",
+    },
+    {
+      icon: "big5",
+      title: "Big Five Safari Experience",
+      text: "Challenge yourself to spot Lion, Leopard, Elephant, Rhino and Buffalo — all on one adventure.",
+      image: "assets/images/activities/activities10.jpg",
+    },
   ];
+
   var TESTIMONIALS = [
-    { name: "Rohan & Priya Mehta", city: "Mumbai", trip: "Honeymoon · 7 Days Kenya", rating: 5, text: "Our honeymoon safari was magical! The Reteti team arranged a candle-lit dinner in the Mara and even managed pure-veg Indian food at every camp. We felt completely at home in Africa." },
-    { name: "Anil Deshpande", city: "Pune", trip: "Family Holiday · 6 Days", rating: 5, text: "Travelled with my parents and two kids. The guide was so patient with the children and my mother got her dal-chawal every night! Smooth airport pickups and zero hassle from start to finish." },
-    { name: "Sneha Iyer", city: "Bengaluru", trip: "Friends Group · Tanzania", rating: 5, text: "Six friends, one epic trip. Ngorongoro and Serengeti blew our minds. Booking and payment from India was super easy and Kim answered every WhatsApp within minutes." },
-    { name: "Rajesh & Meena Gupta", city: "Delhi", trip: "Family · Kenya & Tanzania", rating: 5, text: "Best decision to choose an India-friendly operator. Jain meals were respected throughout, and the Great Migration river crossing left all of us speechless. Worth every rupee." },
-    { name: "Kavita Shah", city: "Ahmedabad", trip: "Family with Parents", rating: 5, text: "As a pure vegetarian Gujarati family we were worried about food abroad — Reteti completely took care of us. Hot khichdi after a long game drive felt like heaven!" },
-    { name: "Vikram Reddy", city: "Hyderabad", trip: "Photography Safari", rating: 5, text: "As a hobby photographer this was a dream. Bernard knew exactly where the cheetahs would be and positioned the jeep perfectly for the light. I came back with portfolio-worthy shots." },
-    { name: "Neha & Arjun Kapoor", city: "Chennai", trip: "Couple · 5 Days", rating: 5, text: "From the warm welcome at Nairobi airport to the farewell, everything was personal. They planned the whole trip around our interests. We're already planning our next safari with them!" },
+    {
+      name: "Rohan & Priya Mehta",
+      city: "Mumbai",
+      trip: "Honeymoon · 7 Days Kenya",
+      rating: 5,
+      text: "Our honeymoon safari was magical! The Reteti team arranged a candle-lit dinner in the Mara and even managed pure-veg Indian food at every camp. We felt completely at home in Africa.",
+    },
+    {
+      name: "Anil Deshpande",
+      city: "Pune",
+      trip: "Family Holiday · 6 Days",
+      rating: 5,
+      text: "Travelled with my parents and two kids. The guide was so patient with the children and my mother got her dal-chawal every night! Smooth airport pickups and zero hassle from start to finish.",
+    },
+    {
+      name: "Sneha Iyer",
+      city: "Bengaluru",
+      trip: "Friends Group · Tanzania",
+      rating: 5,
+      text: "Six friends, one epic trip. Ngorongoro and Serengeti blew our minds. Booking and payment from India was super easy and Kim answered every WhatsApp within minutes.",
+    },
+    {
+      name: "Rajesh & Meena Gupta",
+      city: "Delhi",
+      trip: "Family · Kenya & Tanzania",
+      rating: 5,
+      text: "Best decision to choose an India-friendly operator. Jain meals were respected throughout, and the Great Migration river crossing left all of us speechless. Worth every rupee.",
+    },
+    {
+      name: "Kavita Shah",
+      city: "Ahmedabad",
+      trip: "Family with Parents",
+      rating: 5,
+      text: "As a pure vegetarian Gujarati family we were worried about food abroad — Reteti completely took care of us. Hot khichdi after a long game drive felt like heaven!",
+    },
+    {
+      name: "Vikram Reddy",
+      city: "Hyderabad",
+      trip: "Photography Safari",
+      rating: 5,
+      text: "As a hobby photographer this was a dream. Bernard knew exactly where the cheetahs would be and positioned the jeep perfectly for the light. I came back with portfolio-worthy shots.",
+    },
+    {
+      name: "Neha & Arjun Kapoor",
+      city: "Chennai",
+      trip: "Couple · 5 Days",
+      rating: 5,
+      text: "From the warm welcome at Nairobi airport to the farewell, everything was personal. They planned the whole trip around our interests. We're already planning our next safari with them!",
+    },
   ];
+
   var PARTNERS = [
     { name: "Magical Kenya", file: "assets/partners/magical-kenya.png" },
     { name: "Ecotourism Kenya", file: "assets/partners/ecotourism.png" },
     { name: "Tourism Regulatory Authority", file: "assets/partners/tra.png" },
     { name: "Kenya Wildlife Service", file: "assets/partners/kws.png" },
     { name: "Amref Flying Doctors", file: "assets/partners/amref.png" },
-    { name: "Tour Operators Society of Kenya", file: "assets/partners/tosk.png" },
+    {
+      name: "Tour Operators Society of Kenya",
+      file: "assets/partners/tosk.png",
+    },
   ];
+
   var MONTHS = (function () {
-    var names = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    var out = [], y = 2026, m = 6;
+    var names = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    var out = [],
+      y = 2026,
+      m = 6;
     for (var i = 0; i < 12; i++) {
       out.push(names[m] + " " + y);
       m++;
-      if (m > 11) { m = 0; y++; }
+      if (m > 11) {
+        m = 0;
+        y++;
+      }
     }
     return out;
   })();
-  var TRAVELLERS = ["1","2","3","4","5","6","7","8","9","10","11","12","13+"];
-  var BUDGETS = ["₹50K – ₹1 Lakh","₹1 – ₹2 Lakh","₹2 – ₹3 Lakh","₹3 – ₹5 Lakh","₹5 – ₹10 Lakh","₹10 Lakh+"];
+  var TRAVELLERS = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13+",
+  ];
+  var BUDGETS = [
+    "₹50K – ₹1 Lakh",
+    "₹1 – ₹2 Lakh",
+    "₹2 – ₹3 Lakh",
+    "₹3 – ₹5 Lakh",
+    "₹5 – ₹10 Lakh",
+    "₹10 Lakh+",
+  ];
   var DESTS = ["Kenya", "Tanzania", "Kenya & Tanzania"];
-  var TRIPS = ["Family Holiday","Honeymoon","Friends Group","Solo Travel","Corporate Group"];
-  var TESTI_COLORS = ["#E9A23B","#6BA12B","#E2683A","#2E6B30","#C9821D","#3a7d3c","#b5532a"];
+  var TRIPS = [
+    "Family Holiday",
+    "Honeymoon",
+    "Friends Group",
+    "Solo Travel",
+    "Corporate Group",
+  ];
+  var TESTI_COLORS = [
+    "#E9A23B",
+    "#6BA12B",
+    "#E2683A",
+    "#2E6B30",
+    "#C9821D",
+    "#3a7d3c",
+    "#b5532a",
+  ];
 
   /* ---------------- helpers ---------------- */
   function esc(s) {
@@ -498,81 +761,160 @@
     return t.content.firstElementChild;
   }
 
-  /* image box html — used for destinations & activities (loremflickr) */
+  /* ============================================================
+     IMAGE HELPERS
+     ---------------------------------------------------------------
+     imgHTML()  builds the placeholder + <img> markup for any card.
+
+     Priority order for the image source:
+       1. opt.image  — explicit local path (e.g. "assets/images/…")
+       2. IMG_FALLBACK — if opt.image is empty / missing
+
+     To change a photo: update the `image` property in the data
+     arrays above, or simply replace the file on disk.
+  ============================================================ */
+
+  /**
+   * Returns an <img> src string.
+   * @param {object} opt  — card data object; must have an `image` property.
+   * @returns {string}    — the resolved local path, falling back to IMG_FALLBACK.
+   */
+  function resolveImg(opt) {
+    return opt && opt.image ? opt.image : IMG_FALLBACK;
+  }
+
+  /**
+   * Builds the inner HTML for a card image box (placeholder + real img).
+   * Requires the parent element to have position:relative set.
+   *
+   * @param {object} opt
+   *   opt.image   {string}  local image path
+   *   opt.icon    {string}  icon name shown in placeholder
+   *   opt.label   {string}  alt text / visible label
+   *   opt.tag     {string}  small subtitle badge (optional)
+   *   opt.corner  {string}  corner badge text (optional)
+   */
   function imgHTML(opt) {
-    var src =
-      "https://loremflickr.com/" +
-      (opt.w || 900) + "/" + (opt.h || 650) + "/" +
-      encodeURIComponent(opt.kw) + "?lock=" + (opt.lock || 1);
+    var src = resolveImg(opt);
+
     var ph =
       '<div class="ph">' +
-      (opt.corner ? '<span class="ph-corner">' + esc(opt.corner) + "</span>" : "") +
-      '<span class="ico ph-ico" data-ico="' + (opt.icon || "camera") + '"></span>' +
-      '<span class="ph-label">' + esc(opt.label || "") + "</span>" +
+      (opt.corner
+        ? '<span class="ph-corner">' + esc(opt.corner) + "</span>"
+        : "") +
+      '<span class="ico ph-ico" data-ico="' +
+      esc(opt.icon || "camera") +
+      '"></span>' +
+      '<span class="ph-label">' +
+      esc(opt.label || "") +
+      "</span>" +
       (opt.tag ? '<span class="ph-tag">' + esc(opt.tag) + "</span>" : "") +
       "</div>";
+
     var img =
-      '<img loading="lazy" alt="' + esc(opt.label || "") + '" src="' + src + '" ' +
-      "onload=\"this.classList.add('loaded');var p=this.parentNode.querySelector('.ph');if(p)p.style.opacity=0;\" " +
-      'onerror="this.remove();" />';
+      '<img loading="lazy" ' +
+      'alt="' +
+      esc(opt.label || "") +
+      '" ' +
+      'src="' +
+      esc(src) +
+      '" ' +
+      "onload=\"this.classList.add('loaded'); var p=this.parentNode.querySelector('.ph'); if(p)p.style.opacity=0;\" " +
+      "onerror=\"this.src='" +
+      esc(IMG_FALLBACK) +
+      "'\" />";
+
     return (
       '<div class="imgbox-inner" style="position:absolute;inset:0;">' +
-      ph + img +
+      ph +
+      img +
       "</div>"
     );
   }
 
-  /* hydrate declarative imgbox elements (those with data-img) */
+  /**
+   * Hydrates any .imgbox[data-img] elements already present in the HTML
+   * (declarative usage — the data-img attribute holds a JSON object with
+   * the same shape as the opt argument above).
+   */
   function hydrateImages() {
     document.querySelectorAll(".imgbox[data-img]").forEach(function (box) {
       if (box.dataset.done) return;
       box.dataset.done = "1";
+
       var opt = JSON.parse(box.getAttribute("data-img"));
-      var src =
-        "https://loremflickr.com/" +
-        (opt.w || 900) + "/" + (opt.h || 650) + "/" +
-        encodeURIComponent(opt.kw) + "?lock=" + (opt.lock || 1);
+      var src = resolveImg(opt);
+
       var ph = el('<div class="ph"></div>');
-      if (opt.corner) ph.appendChild(el('<span class="ph-corner">' + esc(opt.corner) + "</span>"));
-      ph.appendChild(el('<span class="ico ph-ico" data-ico="' + (opt.icon || "camera") + '"></span>'));
-      ph.appendChild(el('<span class="ph-label">' + esc(opt.label || "") + "</span>"));
-      if (opt.tag) ph.appendChild(el('<span class="ph-tag">' + esc(opt.tag) + "</span>"));
+      if (opt.corner)
+        ph.appendChild(
+          el('<span class="ph-corner">' + esc(opt.corner) + "</span>"),
+        );
+      ph.appendChild(
+        el(
+          '<span class="ico ph-ico" data-ico="' +
+            esc(opt.icon || "camera") +
+            '"></span>',
+        ),
+      );
+      ph.appendChild(
+        el('<span class="ph-label">' + esc(opt.label || "") + "</span>"),
+      );
+      if (opt.tag)
+        ph.appendChild(el('<span class="ph-tag">' + esc(opt.tag) + "</span>"));
       box.appendChild(ph);
+
       var img = new Image();
       img.loading = "lazy";
       img.alt = opt.label || "";
-      img.onload = function () { img.classList.add("loaded"); ph.style.opacity = 0; };
-      img.onerror = function () { img.remove(); };
+      img.onload = function () {
+        img.classList.add("loaded");
+        ph.style.opacity = 0;
+      };
+      img.onerror = function () {
+        img.src = IMG_FALLBACK;
+      };
       img.src = src;
       box.appendChild(img);
     });
   }
 
   /* ---------------- Renderers ---------------- */
+
   function renderWhy() {
     var g = document.getElementById("why-grid");
     WHY_DESTINATION.forEach(function (w, i) {
-      g.appendChild(el(
-        '<div class="reveal why-card" style="' +
-        "transition-delay:" + (i % 4) * 70 + "ms;" +
-        "background:linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));" +
-        "border:1px solid rgba(255,255,255,0.08);" +
-        "border-radius:30px;" +
-        "padding:34px 30px;" +
-        "position:relative;" +
-        "overflow:hidden;" +
-        "backdrop-filter:blur(10px);" +
-        "transition:all .35s ease;" +
-        "box-shadow:0 10px 30px rgba(0,0,0,.12)" +
-        '">' +
-        '<div style="position:absolute;top:34px;left:0;width:4px;height:72px;border-radius:20px;background:linear-gradient(180deg,#F4B53F,#D99218)"></div>' +
-        '<div style="width:72px;height:72px;border-radius:22px;background:linear-gradient(145deg,#A3D43F,#8DC531);display:flex;align-items:center;justify-content:center;color:#102915;margin-bottom:24px;box-shadow:0 12px 30px rgba(163,212,63,.18)">' +
-        '<span class="ico" data-ico="' + w.icon + '" style="width:26px;height:26px;display:flex"></span>' +
-        "</div>" +
-        '<h3 class="head" style="font-weight:800;font-size:20px;color:#F3FBE9;margin-bottom:14px;line-height:1.28;letter-spacing:-0.5px">' + esc(w.title) + "</h3>" +
-        '<p style="font-size:15px;line-height:1.9;color:rgba(243,251,233,.78);margin:0">' + esc(w.text) + "</p>" +
-        "</div>"
-      ));
+      g.appendChild(
+        el(
+          '<div class="reveal why-card" style="' +
+            "transition-delay:" +
+            (i % 4) * 70 +
+            "ms;" +
+            "background:linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));" +
+            "border:1px solid rgba(255,255,255,0.08);" +
+            "border-radius:30px;" +
+            "padding:34px 30px;" +
+            "position:relative;" +
+            "overflow:hidden;" +
+            "backdrop-filter:blur(10px);" +
+            "transition:all .35s ease;" +
+            "box-shadow:0 10px 30px rgba(0,0,0,.12)" +
+            '">' +
+            '<div style="position:absolute;top:34px;left:0;width:4px;height:72px;border-radius:20px;background:linear-gradient(180deg,#F4B53F,#D99218)"></div>' +
+            '<div style="width:72px;height:72px;border-radius:22px;background:linear-gradient(145deg,#A3D43F,#8DC531);display:flex;align-items:center;justify-content:center;color:#102915;margin-bottom:24px;box-shadow:0 12px 30px rgba(163,212,63,.18)">' +
+            '<span class="ico" data-ico="' +
+            w.icon +
+            '" style="width:26px;height:26px;display:flex"></span>' +
+            "</div>" +
+            '<h3 class="head" style="font-weight:800;font-size:20px;color:#F3FBE9;margin-bottom:14px;line-height:1.28;letter-spacing:-0.5px">' +
+            esc(w.title) +
+            "</h3>" +
+            '<p style="font-size:15px;line-height:1.9;color:rgba(243,251,233,.78);margin:0">' +
+            esc(w.text) +
+            "</p>" +
+            "</div>",
+        ),
+      );
     });
     setTimeout(function () {
       document.querySelectorAll(".why-card").forEach(function (card) {
@@ -592,154 +934,268 @@
 
   function renderTrusted() {
     var g = document.getElementById("trusted-cities");
-    TRUSTED_CITIES.forEach(function (c) { g.appendChild(el("<span>" + esc(c) + "</span>")); });
+    TRUSTED_CITIES.forEach(function (c) {
+      g.appendChild(el("<span>" + esc(c) + "</span>"));
+    });
   }
 
   function renderIncludes() {
     var g = document.getElementById("includes-grid");
     INCLUDES.forEach(function (it, i) {
-      g.appendChild(el(
-        '<div class="reveal include-card" style="transition-delay:' + (i % 4) * 70 + 'ms;background:var(--white);border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow-sm);border:1px solid var(--line);display:flex;align-items:center;gap:16px;transition:transform .2s ease, box-shadow .2s ease">' +
-        '<div style="width:50px;height:50px;border-radius:14px;flex-shrink:0;background:rgba(140,198,63,0.15);display:grid;place-items:center;color:var(--lime-deep)"><span class="ico" data-ico="' + it.icon + '" style="width:26px;height:26px"></span></div>' +
-        '<div class="head" style="font-weight:800;font-size:15.5px;color:var(--forest);line-height:1.25">' + esc(it.label) + "</div></div>"
-      ));
+      g.appendChild(
+        el(
+          '<div class="reveal include-card" style="transition-delay:' +
+            (i % 4) * 70 +
+            'ms;background:var(--white);border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow-sm);border:1px solid var(--line);display:flex;align-items:center;gap:16px;transition:transform .2s ease, box-shadow .2s ease">' +
+            '<div style="width:50px;height:50px;border-radius:14px;flex-shrink:0;background:rgba(140,198,63,0.15);display:grid;place-items:center;color:var(--lime-deep)"><span class="ico" data-ico="' +
+            it.icon +
+            '" style="width:26px;height:26px"></span></div>' +
+            '<div class="head" style="font-weight:800;font-size:15.5px;color:var(--forest);line-height:1.25">' +
+            esc(it.label) +
+            "</div></div>",
+        ),
+      );
     });
   }
 
-  /* ---- KEY FIX: packageCard uses local image with correct z-index layering ---- */
   function packageCard(p, theme, i) {
     var accent = theme === "kenya" ? "var(--gold)" : "var(--sunset)";
-    var accentSoft = theme === "kenya" ? "rgba(233,162,59,0.16)" : "rgba(226,104,58,0.14)";
+    var accentSoft =
+      theme === "kenya" ? "rgba(233,162,59,0.16)" : "rgba(226,104,58,0.14)";
     var hlColor = theme === "kenya" ? "var(--gold-deep)" : "var(--clay)";
-    var hl = p.highlights.map(function (h) {
-      return '<span style="font-size:12px;font-weight:700;font-family:var(--head);color:' + hlColor + ";background:" + accentSoft + ';padding:5px 11px;border-radius:100px">' + esc(h) + "</span>";
-    }).join("");
+    var hl = p.highlights
+      .map(function (h) {
+        return (
+          '<span style="font-size:12px;font-weight:700;font-family:var(--head);color:' +
+          hlColor +
+          ";background:" +
+          accentSoft +
+          ';padding:5px 11px;border-radius:100px">' +
+          esc(h) +
+          "</span>"
+        );
+      })
+      .join("");
+
+    /* Use p.image directly; fall back to IMG_FALLBACK if not set */
+    var imgSrc = p.image || IMG_FALLBACK;
 
     return el(
-      '<article class="reveal pkg-card" style="transition-delay:' + i * 70 + 'ms;background:var(--white);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease">' +
-
-      /* image wrapper — position:relative so badges sit on top */
-      '<div style="position:relative;overflow:hidden;">' +
-
-      /* actual image */
-      '<div style="aspect-ratio:16/10;overflow:hidden;background:#1d4d1d;">' +
-      '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" ' +
-      'style="width:100%;height:100%;object-fit:cover;display:block;" ' +
-      'onerror="this.style.display=\'none\'" />' +
-      '</div>' +
-
-      /* badge — top right */
-      '<span style="position:absolute;top:14px;right:14px;background:' + accent + ';color:var(--forest-2);font-family:var(--head);font-weight:800;font-size:12px;padding:7px 13px;border-radius:100px;box-shadow:0 6px 16px rgba(0,0,0,0.2);">' +
-      esc(p.badge) + "</span>" +
-
-      /* days / nights pills — bottom left */
-      '<div style="position:absolute;left:14px;bottom:14px;display:flex;gap:8px;">' +
-      '<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(8,28,12,0.8);color:#eaf6dd;font-family:var(--head);font-weight:700;font-size:12.5px;padding:6px 11px;border-radius:100px">' +
-      '<span class="ico" data-ico="sun" style="width:14px;height:14px"></span> ' + p.days + " Days</span>" +
-      '<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(8,28,12,0.8);color:#eaf6dd;font-family:var(--head);font-weight:700;font-size:12.5px;padding:6px 11px;border-radius:100px">' +
-      '<span class="ico" data-ico="moon" style="width:14px;height:14px"></span> ' + p.nights + " Nights</span>" +
-      "</div>" +
-
-      "</div>" + /* end image wrapper */
-
-      '<div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">' +
-      '<h3 class="head" style="font-weight:800;font-size:22px;color:var(--forest);margin-bottom:10px;line-height:1.15">' + esc(p.name) + "</h3>" +
-      '<p style="font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px">' + esc(p.desc) + "</p>" +
-      '<div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px">' + hl + "</div>" +
-      '<div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:18px;border-top:1px dashed var(--line)">' +
-      '<div><div style="font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em">From / person</div>' +
-      '<div class="head" style="font-weight:900;font-size:26px;color:var(--forest);line-height:1">₹' + esc(p.price) + "</div></div>" +
-      '<button class="btn btn-forest js-form" style="padding:13px 20px;font-size:14px">Get a Quote <span class="ico" data-ico="arrow"></span></button>' +
-      "</div></div></article>"
+      '<article class="reveal pkg-card" style="transition-delay:' +
+        i * 70 +
+        'ms;background:var(--white);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease">' +
+        '<div style="position:relative;overflow:hidden;">' +
+        '<div style="aspect-ratio:16/10;overflow:hidden;background:#1d4d1d;">' +
+        '<img src="' +
+        esc(imgSrc) +
+        '" alt="' +
+        esc(p.name) +
+        '" ' +
+        'style="width:100%;height:100%;object-fit:cover;display:block;" ' +
+        "onerror=\"this.src='" +
+        esc(IMG_FALLBACK) +
+        "'\" />" +
+        "</div>" +
+        '<span style="position:absolute;top:14px;right:14px;background:' +
+        accent +
+        ';color:var(--forest-2);font-family:var(--head);font-weight:800;font-size:12px;padding:7px 13px;border-radius:100px;box-shadow:0 6px 16px rgba(0,0,0,0.2);">' +
+        esc(p.badge) +
+        "</span>" +
+        '<div style="position:absolute;left:14px;bottom:14px;display:flex;gap:8px;">' +
+        '<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(8,28,12,0.8);color:#eaf6dd;font-family:var(--head);font-weight:700;font-size:12.5px;padding:6px 11px;border-radius:100px">' +
+        '<span class="ico" data-ico="sun" style="width:14px;height:14px"></span> ' +
+        p.days +
+        " Days</span>" +
+        '<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(8,28,12,0.8);color:#eaf6dd;font-family:var(--head);font-weight:700;font-size:12.5px;padding:6px 11px;border-radius:100px">' +
+        '<span class="ico" data-ico="moon" style="width:14px;height:14px"></span> ' +
+        p.nights +
+        " Nights</span>" +
+        "</div>" +
+        "</div>" +
+        '<div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">' +
+        '<h3 class="head" style="font-weight:800;font-size:22px;color:var(--forest);margin-bottom:10px;line-height:1.15">' +
+        esc(p.name) +
+        "</h3>" +
+        '<p style="font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px">' +
+        esc(p.desc) +
+        "</p>" +
+        '<div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px">' +
+        hl +
+        "</div>" +
+        '<div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:18px;border-top:1px dashed var(--line)">' +
+        '<div><div style="font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em">From / person</div>' +
+        '<div class="head" style="font-weight:900;font-size:26px;color:var(--forest);line-height:1">₹' +
+        esc(p.price) +
+        "</div></div>" +
+        '<button class="btn btn-forest js-form" style="padding:13px 20px;font-size:14px">Get a Quote <span class="ico" data-ico="arrow"></span></button>' +
+        "</div></div></article>",
     );
   }
 
   function renderPackages() {
     var kg = document.getElementById("kenya-grid"),
-        tg = document.getElementById("tanzania-grid");
-    KENYA_PACKAGES.forEach(function (p, i) { kg.appendChild(packageCard(p, "kenya", i)); });
-    TANZANIA_PACKAGES.forEach(function (p, i) { tg.appendChild(packageCard(p, "tanzania", i)); });
+      tg = document.getElementById("tanzania-grid");
+    KENYA_PACKAGES.forEach(function (p, i) {
+      kg.appendChild(packageCard(p, "kenya", i));
+    });
+    TANZANIA_PACKAGES.forEach(function (p, i) {
+      tg.appendChild(packageCard(p, "tanzania", i));
+    });
   }
 
   function destSlide(d, theme) {
     var accent = theme === "kenya" ? "var(--gold)" : "var(--sunset)";
     return el(
       '<div class="dest-slide">' +
-      imgHTML({ kw: d.kw, lock: d.lock, icon: "camera", label: d.name }) +
-      '<div class="scrim"></div>' +
-      '<div class="info">' +
-      '<span style="display:inline-flex;align-items:center;gap:6px;background:' + accent + ';color:var(--forest-2);font-family:var(--head);font-weight:800;font-size:11px;padding:4px 10px;border-radius:100px;margin-bottom:9px"><span class="ico" data-ico="pin" style="width:12px;height:12px"></span> ' +
-      (theme === "kenya" ? "Kenya" : "Tanzania") + "</span>" +
-      '<h4 class="head" style="font-weight:800;font-size:21px;color:#fff;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,0.5)">' + esc(d.name) + "</h4>" +
-      '<div style="font-size:12.5px;color:var(--lime-bright);font-weight:700;margin-top:3px">' + esc(d.tag) + "</div>" +
-      "</div></div>"
+        imgHTML({
+          image: d.image,
+          icon: d.icon || "camera",
+          label: d.name,
+          tag: d.tag,
+        }) +
+        '<div class="scrim"></div>' +
+        '<div class="info">' +
+        '<span style="display:inline-flex;align-items:center;gap:6px;background:' +
+        accent +
+        ';color:var(--forest-2);font-family:var(--head);font-weight:800;font-size:11px;padding:4px 10px;border-radius:100px;margin-bottom:9px"><span class="ico" data-ico="pin" style="width:12px;height:12px"></span> ' +
+        (theme === "kenya" ? "Kenya" : "Tanzania") +
+        "</span>" +
+        '<h4 class="head" style="font-weight:800;font-size:21px;color:#fff;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,0.5)">' +
+        esc(d.name) +
+        "</h4>" +
+        '<div style="font-size:12.5px;color:var(--lime-bright);font-weight:700;margin-top:3px">' +
+        esc(d.tag) +
+        "</div>" +
+        "</div></div>",
     );
   }
 
   function renderDestinations() {
     var kg = document.getElementById("kenya-dest"),
-        tg = document.getElementById("tanzania-dest");
-    KENYA_DEST.forEach(function (d) { kg.appendChild(destSlide(d, "kenya")); });
-    TANZANIA_DEST.forEach(function (d) { tg.appendChild(destSlide(d, "tanzania")); });
+      tg = document.getElementById("tanzania-dest");
+    KENYA_DEST.forEach(function (d) {
+      kg.appendChild(destSlide(d, "kenya"));
+    });
+    TANZANIA_DEST.forEach(function (d) {
+      tg.appendChild(destSlide(d, "tanzania"));
+    });
   }
 
   function renderWhyUs() {
     var g = document.getElementById("whyus-grid");
     WHY_US.forEach(function (w, i) {
-      g.appendChild(el(
-        '<div class="reveal whyus-card" style="transition-delay:' + (i % 2) * 70 + 'ms;background:var(--white);border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .2s ease, box-shadow .2s ease">' +
-        '<div style="width:46px;height:46px;border-radius:13px;background:rgba(140,198,63,0.15);display:grid;place-items:center;color:var(--lime-deep);margin-bottom:14px"><span class="ico" data-ico="' + w.icon + '" style="width:24px;height:24px"></span></div>' +
-        '<h3 class="head" style="font-weight:800;font-size:16.5px;color:var(--forest);margin-bottom:7px;line-height:1.25">' + esc(w.title) + "</h3>" +
-        '<p style="font-size:13.8px;line-height:1.55;color:var(--ink-soft)">' + esc(w.text) + "</p></div>"
-      ));
+      g.appendChild(
+        el(
+          '<div class="reveal whyus-card" style="transition-delay:' +
+            (i % 2) * 70 +
+            'ms;background:var(--white);border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .2s ease, box-shadow .2s ease">' +
+            '<div style="width:46px;height:46px;border-radius:13px;background:rgba(140,198,63,0.15);display:grid;place-items:center;color:var(--lime-deep);margin-bottom:14px"><span class="ico" data-ico="' +
+            w.icon +
+            '" style="width:24px;height:24px"></span></div>' +
+            '<h3 class="head" style="font-weight:800;font-size:16.5px;color:var(--forest);margin-bottom:7px;line-height:1.25">' +
+            esc(w.title) +
+            "</h3>" +
+            '<p style="font-size:13.8px;line-height:1.55;color:var(--ink-soft)">' +
+            esc(w.text) +
+            "</p></div>",
+        ),
+      );
     });
   }
 
   function renderActivities() {
     var g = document.getElementById("activities-grid");
     ACTIVITIES.forEach(function (a, i) {
-      g.appendChild(el(
-        '<div class="reveal act-card" style="transition-delay:' + (i % 3) * 70 + 'ms;background:var(--white);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .22s ease, box-shadow .22s ease">' +
-        '<div style="position:relative"><div class="imgbox" style="aspect-ratio:16 / 10;position:relative">' +
-        imgHTML({ kw: a.kw, lock: a.lock, icon: a.icon, label: a.title }) +
-        "</div>" +
-        '<div style="position:absolute;left:16px;bottom:-22px;width:50px;height:50px;border-radius:14px;background:linear-gradient(150deg, var(--lime), var(--lime-deep));display:grid;place-items:center;color:var(--forest-2);box-shadow:0 8px 20px rgba(8,28,12,0.3);z-index:3"><span class="ico" data-ico="' + a.icon + '" style="width:26px;height:26px"></span></div></div>' +
-        '<div style="padding:30px 22px 24px"><h3 class="head" style="font-weight:800;font-size:18.5px;color:var(--forest);margin-bottom:8px;line-height:1.2">' + esc(a.title) + "</h3>" +
-        '<p style="font-size:14px;line-height:1.55;color:var(--ink-soft)">' + esc(a.text) + "</p></div></div>"
-      ));
+      g.appendChild(
+        el(
+          '<div class="reveal act-card" style="transition-delay:' +
+            (i % 3) * 70 +
+            'ms;background:var(--white);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .22s ease, box-shadow .22s ease">' +
+            '<div style="position:relative"><div class="imgbox" style="aspect-ratio:16 / 10;position:relative">' +
+            imgHTML({ image: a.image, icon: a.icon, label: a.title }) +
+            "</div>" +
+            '<div style="position:absolute;left:16px;bottom:-22px;width:50px;height:50px;border-radius:14px;background:linear-gradient(150deg, var(--lime), var(--lime-deep));display:grid;place-items:center;color:var(--forest-2);box-shadow:0 8px 20px rgba(8,28,12,0.3);z-index:3"><span class="ico" data-ico="' +
+            a.icon +
+            '" style="width:26px;height:26px"></span></div></div>' +
+            '<div style="padding:30px 22px 24px"><h3 class="head" style="font-weight:800;font-size:18.5px;color:var(--forest);margin-bottom:8px;line-height:1.2">' +
+            esc(a.title) +
+            "</h3>" +
+            '<p style="font-size:14px;line-height:1.55;color:var(--ink-soft)">' +
+            esc(a.text) +
+            "</p></div></div>",
+        ),
+      );
     });
   }
 
   function renderTestimonials() {
     var g = document.getElementById("testi-track");
     TESTIMONIALS.forEach(function (t, i) {
-      g.appendChild(el(
-        '<div class="testi-slide">' +
-        '<span class="ico" data-ico="quote" style="width:38px;height:38px;color:var(--gold)"></span>' +
-        '<span class="stars">' + stars(t.rating) + "</span>" +
-        '<p style="font-size:14.5px;line-height:1.6;color:rgba(243,251,233,0.86);margin:12px 0 18px;flex:1">"' + esc(t.text) + '"</p>' +
-        '<div style="display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)">' +
-        '<div style="width:46px;height:46px;border-radius:50%;background:' + TESTI_COLORS[i % TESTI_COLORS.length] + ';display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:17px;color:#fff;flex-shrink:0">' + esc(t.name[0]) + "</div>" +
-        '<div><div class="head" style="font-weight:800;font-size:15px;color:#fff;line-height:1.2">' + esc(t.name) + "</div>" +
-        '<div style="font-size:12.5px;color:var(--lime-bright);font-weight:600;margin-top:2px"><span class="ico" data-ico="pin" style="width:12px;height:12px;display:inline-flex;vertical-align:-1px"></span> ' + esc(t.city) + " · " + esc(t.trip) + "</div></div>" +
-        "</div></div>"
-      ));
+      g.appendChild(
+        el(
+          '<div class="testi-slide">' +
+            '<span class="ico" data-ico="quote" style="width:38px;height:38px;color:var(--gold)"></span>' +
+            '<span class="stars">' +
+            stars(t.rating) +
+            "</span>" +
+            '<p style="font-size:14.5px;line-height:1.6;color:rgba(243,251,233,0.86);margin:12px 0 18px;flex:1">"' +
+            esc(t.text) +
+            '"</p>' +
+            '<div style="display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)">' +
+            '<div style="width:46px;height:46px;border-radius:50%;background:' +
+            TESTI_COLORS[i % TESTI_COLORS.length] +
+            ';display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:17px;color:#fff;flex-shrink:0">' +
+            esc(t.name[0]) +
+            "</div>" +
+            '<div><div class="head" style="font-weight:800;font-size:15px;color:#fff;line-height:1.2">' +
+            esc(t.name) +
+            "</div>" +
+            '<div style="font-size:12.5px;color:var(--lime-bright);font-weight:600;margin-top:2px"><span class="ico" data-ico="pin" style="width:12px;height:12px;display:inline-flex;vertical-align:-1px"></span> ' +
+            esc(t.city) +
+            " · " +
+            esc(t.trip) +
+            "</div></div>" +
+            "</div></div>",
+        ),
+      );
     });
   }
 
   function renderPartners() {
     var g = document.getElementById("partners-grid");
     PARTNERS.forEach(function (p) {
-      g.appendChild(el(
-        '<div class="partner-card" title="' + esc(p.name) + '"><img src="' + p.file + '" alt="' + esc(p.name) + '" /></div>'
-      ));
+      g.appendChild(
+        el(
+          '<div class="partner-card" title="' +
+            esc(p.name) +
+            '"><img src="' +
+            esc(p.file) +
+            '" alt="' +
+            esc(p.name) +
+            '" /></div>',
+        ),
+      );
     });
   }
 
   function renderFooter() {
     var s = document.getElementById("footer-social");
-    [["instagram", CONTACT.ig], ["facebook", CONTACT.fb], ["tripadvisor", CONTACT.ta]].forEach(function (pair) {
-      s.appendChild(el('<a href="' + pair[1] + '" target="_blank" rel="noopener" aria-label="' + pair[0] + '"><span class="ico" data-ico="' + pair[0] + '" style="width:20px;height:20px"></span></a>'));
+    [
+      ["instagram", CONTACT.ig],
+      ["facebook", CONTACT.fb],
+      ["tripadvisor", CONTACT.ta],
+    ].forEach(function (pair) {
+      s.appendChild(
+        el(
+          '<a href="' +
+            pair[1] +
+            '" target="_blank" rel="noopener" aria-label="' +
+            pair[0] +
+            '"><span class="ico" data-ico="' +
+            pair[0] +
+            '" style="width:20px;height:20px"></span></a>',
+        ),
+      );
     });
     var c = document.getElementById("footer-contact");
     [
@@ -747,10 +1203,22 @@
       ["phone", CONTACT.phone, "tel:" + PHONE_RAW],
       ["mail", CONTACT.email, "mailto:" + CONTACT.email],
     ].forEach(function (row) {
-      c.appendChild(el('<a href="' + row[2] + '"><span class="fc-ico"><span class="ico" data-ico="' + row[0] + '"></span></span><span>' + esc(row[1]) + "</span></a>"));
+      c.appendChild(
+        el(
+          '<a href="' +
+            row[2] +
+            '"><span class="fc-ico"><span class="ico" data-ico="' +
+            row[0] +
+            '"></span></span><span>' +
+            esc(row[1]) +
+            "</span></a>",
+        ),
+      );
     });
     document.getElementById("footer-copy").textContent =
-      "© " + new Date().getFullYear() + " Reteti Adventure Safaris. All rights reserved.";
+      "© " +
+      new Date().getFullYear() +
+      " Reteti Adventure Safaris. All rights reserved.";
   }
 
   document.querySelectorAll(".stars[data-stars]").forEach(function (s) {
@@ -759,7 +1227,11 @@
 
   /* ---------------- Quote form ---------------- */
   function optionList(arr) {
-    return arr.map(function (x) { return "<option>" + esc(x) + "</option>"; }).join("");
+    return arr
+      .map(function (x) {
+        return "<option>" + esc(x) + "</option>";
+      })
+      .join("");
   }
   function buildForm(container, ctaLabel) {
     var html =
@@ -777,13 +1249,20 @@
       fieldSelect("budget", "Estimated Budget / person", false, BUDGETS) +
       '<div class="ff full"><label>Type of Trip</label><div class="trip-chips" style="display:flex;flex-wrap:wrap;gap:8px">' +
       TRIPS.map(function (t) {
-        return '<button type="button" class="trip-chip" data-trip="' + esc(t) + '">' + esc(t) + "</button>";
+        return (
+          '<button type="button" class="trip-chip" data-trip="' +
+          esc(t) +
+          '">' +
+          esc(t) +
+          "</button>"
+        );
       }).join("") +
       "</div></div>" +
       '<div class="ff full"><label>Special Requirements</label><textarea data-f="notes" placeholder="Indian food, vegetarian / Jain meals, luxury lodges, kids-friendly safari, etc."></textarea></div>' +
       "</div>" +
       '<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;padding:17px;font-size:16px">' +
-      esc(ctaLabel) + ' <span class="ico" data-ico="arrow"></span></button>' +
+      esc(ctaLabel) +
+      ' <span class="ico" data-ico="arrow"></span></button>' +
       '<p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px">🔒 Your details are safe with us. No spam, ever.</p>' +
       "</form>";
     container.innerHTML = html;
@@ -793,7 +1272,9 @@
     var trip = "";
     container.querySelectorAll(".trip-chip").forEach(function (chip) {
       chip.addEventListener("click", function () {
-        container.querySelectorAll(".trip-chip").forEach(function (c) { c.classList.remove("on"); });
+        container.querySelectorAll(".trip-chip").forEach(function (c) {
+          c.classList.remove("on");
+        });
         chip.classList.add("on");
         trip = chip.getAttribute("data-trip");
       });
@@ -802,14 +1283,26 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var vals = {};
-      ["name","mobile","email","city","dest","month","travelers","budget","notes"].forEach(function (k) {
+      [
+        "name",
+        "mobile",
+        "email",
+        "city",
+        "dest",
+        "month",
+        "travelers",
+        "budget",
+        "notes",
+      ].forEach(function (k) {
         var input = container.querySelector('[data-f="' + k + '"]');
         vals[k] = input ? input.value : "";
       });
       var errs = {};
       if (!vals.name.trim()) errs.name = "Please enter your name";
-      if (!/^\d{10}$/.test(vals.mobile.replace(/\D/g, ""))) errs.mobile = "Enter a valid 10-digit mobile number";
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) errs.email = "Enter a valid email address";
+      if (!/^\d{10}$/.test(vals.mobile.replace(/\D/g, "")))
+        errs.mobile = "Enter a valid 10-digit mobile number";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email))
+        errs.email = "Enter a valid email address";
       if (!vals.city.trim()) errs.city = "Please enter your city";
       if (!vals.dest) errs.dest = "Choose a destination";
       if (!vals.travelers) errs.travelers = "Select travellers";
@@ -829,24 +1322,41 @@
       if (Object.keys(errs).length === 0) {
         showSuccess(container, vals);
       } else {
-        var firstBad = container.querySelector(".ff.invalid input, .ff.invalid select");
+        var firstBad = container.querySelector(
+          ".ff.invalid input, .ff.invalid select",
+        );
         if (firstBad) firstBad.focus();
       }
     });
   }
   function fieldText(k, label, req, ph, type) {
     return (
-      '<div class="ff" data-k="' + k + '"><label>' + esc(label) +
-      (req ? ' <span class="req">*</span>' : "") + "</label>" +
-      '<input data-f="' + k + '" ' + (type ? 'type="' + type + '" ' : "") +
-      'placeholder="' + esc(ph || "") + '" /><span class="err"></span></div>'
+      '<div class="ff" data-k="' +
+      k +
+      '"><label>' +
+      esc(label) +
+      (req ? ' <span class="req">*</span>' : "") +
+      "</label>" +
+      '<input data-f="' +
+      k +
+      '" ' +
+      (type ? 'type="' + type + '" ' : "") +
+      'placeholder="' +
+      esc(ph || "") +
+      '" /><span class="err"></span></div>'
     );
   }
   function fieldSelect(k, label, req, arr, extra) {
     return (
-      '<div class="ff" data-k="' + k + '"><label>' + esc(label) +
-      (req ? ' <span class="req">*</span>' : "") + "</label>" +
-      '<select data-f="' + k + '"><option value="">Choose…</option>' +
+      '<div class="ff" data-k="' +
+      k +
+      '"><label>' +
+      esc(label) +
+      (req ? ' <span class="req">*</span>' : "") +
+      "</label>" +
+      '<select data-f="' +
+      k +
+      '"><option value="">Choose…</option>' +
       optionList(arr) +
       (extra ? "<option>" + esc(extra) + "</option>" : "") +
       '</select><span class="err"></span></div>'
@@ -858,37 +1368,52 @@
     container.innerHTML =
       '<div style="text-align:center;padding:30px 10px">' +
       '<div style="width:78px;height:78px;border-radius:50%;background:rgba(140,198,63,0.18);display:grid;place-items:center;margin:0 auto 20px;color:var(--lime-deep)"><span class="ico" data-ico="check" style="width:42px;height:42px"></span></div>' +
-      '<h3 class="head" style="font-weight:800;font-size:25px;color:var(--forest);margin-bottom:10px">Dhanyavaad, ' + esc(first) + "! 🎉</h3>" +
-      '<p style="font-size:15.5px;color:var(--ink-soft);line-height:1.6;max-width:400px;margin:0 auto 22px">Your request is in. Our India desk will craft your personalised ' + esc(dest) + " itinerary and reach out within 24 hours.</p>" +
+      '<h3 class="head" style="font-weight:800;font-size:25px;color:var(--forest);margin-bottom:10px">Dhanyavaad, ' +
+      esc(first) +
+      "! 🎉</h3>" +
+      '<p style="font-size:15.5px;color:var(--ink-soft);line-height:1.6;max-width:400px;margin:0 auto 22px">Your request is in. Our India desk will craft your personalised ' +
+      esc(dest) +
+      " itinerary and reach out within 24 hours.</p>" +
       '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">' +
-      '<a href="https://wa.me/' + PHONE_RAW + '" target="_blank" rel="noopener" class="btn btn-wa"><span class="ico" data-ico="whatsapp"></span> Message us now</a>' +
+      '<a href="https://wa.me/' +
+      PHONE_RAW +
+      '" target="_blank" rel="noopener" class="btn btn-wa"><span class="ico" data-ico="whatsapp"></span> Message us now</a>' +
       '<button class="btn btn-ghost js-resubmit">Submit another</button>' +
       "</div></div>";
     hydrateIcons(container);
     var rb = container.querySelector(".js-resubmit");
-    if (rb) rb.addEventListener("click", function () {
-      buildForm(container, container.getAttribute("data-cta") || "Get My Free Safari Quote");
-    });
+    if (rb)
+      rb.addEventListener("click", function () {
+        buildForm(
+          container,
+          container.getAttribute("data-cta") || "Get My Free Safari Quote",
+        );
+      });
   }
 
   /* ---------------- Sliders ---------------- */
   function animateScrollX(elm, target, dur) {
     dur = dur || 460;
-    var start = elm.scrollLeft, diff = target - start;
+    var start = elm.scrollLeft,
+      diff = target - start;
     if (Math.abs(diff) < 1) return;
-    var t0 = window.performance && performance.now ? performance.now() : Date.now();
+    var t0 =
+      window.performance && performance.now ? performance.now() : Date.now();
     elm.style.scrollSnapType = "none";
     clearTimeout(elm._snapT);
     clearInterval(elm._animT);
     elm._animT = setInterval(function () {
-      var now = window.performance && performance.now ? performance.now() : Date.now();
+      var now =
+        window.performance && performance.now ? performance.now() : Date.now();
       var p = Math.min(1, (now - t0) / dur);
       var e = 1 - Math.pow(1 - p, 3);
       elm.scrollLeft = start + diff * e;
       if (p >= 1) {
         clearInterval(elm._animT);
         elm.scrollLeft = target;
-        elm._snapT = setTimeout(function () { elm.style.scrollSnapType = "x mandatory"; }, 60);
+        elm._snapT = setTimeout(function () {
+          elm.style.scrollSnapType = "x mandatory";
+        }, 60);
       }
     }, 16);
   }
@@ -905,11 +1430,21 @@
       else target = Math.max(0, Math.min(max, track.scrollLeft + cw * dir));
       animateScrollX(track, target);
     }
-    sliderEl.querySelector(".js-next").addEventListener("click", function () { step(1); });
-    sliderEl.querySelector(".js-prev").addEventListener("click", function () { step(-1); });
-    sliderEl.addEventListener("mouseenter", function () { paused = true; });
-    sliderEl.addEventListener("mouseleave", function () { paused = false; });
-    setInterval(function () { if (!paused) step(1); }, interval);
+    sliderEl.querySelector(".js-next").addEventListener("click", function () {
+      step(1);
+    });
+    sliderEl.querySelector(".js-prev").addEventListener("click", function () {
+      step(-1);
+    });
+    sliderEl.addEventListener("mouseenter", function () {
+      paused = true;
+    });
+    sliderEl.addEventListener("mouseleave", function () {
+      paused = false;
+    });
+    setInterval(function () {
+      if (!paused) step(1);
+    }, interval);
   }
 
   /* ---------------- Nav / scroll / reveal ---------------- */
@@ -917,14 +1452,21 @@
     if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
   }
   function scrollToForm() {
-    var plan = document.getElementById("plan"), quote = document.getElementById("quote");
+    var plan = document.getElementById("plan"),
+      quote = document.getElementById("quote");
     var mid = window.scrollY + window.innerHeight / 2;
-    function dist(e) { return e ? Math.abs(e.getBoundingClientRect().top + window.scrollY - mid) : Infinity; }
+    function dist(e) {
+      return e
+        ? Math.abs(e.getBoundingClientRect().top + window.scrollY - mid)
+        : Infinity;
+    }
     scrollToEl(dist(plan) <= dist(quote) ? plan : quote);
   }
   function initNav() {
     var nav = document.getElementById("nav");
-    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 40); }
+    function onScroll() {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -950,21 +1492,34 @@
   function initFormButtons() {
     document.addEventListener("click", function (e) {
       var btn = e.target.closest && e.target.closest(".js-form");
-      if (btn) { e.preventDefault(); scrollToForm(); }
+      if (btn) {
+        e.preventDefault();
+        scrollToForm();
+      }
     });
   }
   function initReveal() {
     var els = document.querySelectorAll(".reveal:not(.in)");
     if (!("IntersectionObserver" in window)) {
-      els.forEach(function (e) { e.classList.add("in"); });
+      els.forEach(function (e) {
+        e.classList.add("in");
+      });
       return;
     }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    els.forEach(function (e) { io.observe(e); });
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+    els.forEach(function (e) {
+      io.observe(e);
+    });
   }
 
   /* ---------------- Boot ---------------- */
@@ -989,9 +1544,24 @@
     hydrateImages();
     hydrateIcons(document);
 
-    initSlider(document.querySelector('[data-slider="kenya"]'), ".dest-track", ".dest-slide", 3800);
-    initSlider(document.querySelector('[data-slider="tanzania"]'), ".dest-track", ".dest-slide", 4200);
-    initSlider(document.querySelector('[data-slider="testi"]'), ".testi-track", ".testi-slide", 4200);
+    initSlider(
+      document.querySelector('[data-slider="kenya"]'),
+      ".dest-track",
+      ".dest-slide",
+      3800,
+    );
+    initSlider(
+      document.querySelector('[data-slider="tanzania"]'),
+      ".dest-track",
+      ".dest-slide",
+      4200,
+    );
+    initSlider(
+      document.querySelector('[data-slider="testi"]'),
+      ".testi-track",
+      ".testi-slide",
+      4200,
+    );
 
     initNav();
     initFormButtons();

@@ -17,8 +17,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </head>
 <body>
-  <div id="page-loading">Loading the savannah…</div>
-  <div id="app" style="display:none">
+  <!-- <div id="page-loading">Loading the savannah…</div> -->
+  <div id="app" >
 
     <!-- ============ NAVBAR ============ -->
     <header id="nav">
@@ -226,7 +226,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 
     <!-- ============ INLINE FORM (below banner) ============ -->
-    <section id="plan" class="inline-form-sec">
+    <!-- <section id="plan" class="inline-form-sec">
       <div class="wrap" style="max-width:760px">
         <div class="reveal" style="text-align:center;margin-bottom:26px">
           <div class="eyebrow center" style="color:var(--forest-2)">Free · No Obligation</div>
@@ -235,7 +235,153 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </div>
         <div class="card reveal form-card" data-form="plan"></div>
       </div>
-    </section>
+    </section> -->
+
+
+
+    
+<div class="card reveal">
+
+  <form id="safari-form" novalidate>
+
+    <div class="grid qf-grid" style="grid-template-columns:1fr 1fr;gap:15px">
+
+      <!-- Full Name -->
+      <div class="ff">
+        <label>Full Name <span class="req">*</span></label>
+        <input type="text" id="name" placeholder="e.g. Priya Sharma">
+        <span class="err"></span>
+      </div>
+
+      <!-- Mobile -->
+      <div class="ff">
+        <label>Mobile Number <span class="req">*</span></label>
+        <div class="phone-row">
+          <span class="cc">🇮🇳 +91</span>
+          <input
+            type="text"
+            id="mobile"
+            maxlength="10"
+            inputmode="numeric"
+            placeholder="10-digit number">
+        </div>
+        <span class="err"></span>
+      </div>
+
+      <!-- Email -->
+      <div class="ff">
+        <label>Email Address <span class="req">*</span></label>
+        <input type="email" id="email" placeholder="you@email.com">
+        <span class="err"></span>
+      </div>
+
+      <!-- City -->
+      <div class="ff">
+        <label>City (India) <span class="req">*</span></label>
+        <input type="text" id="city" placeholder="e.g. Mumbai">
+        <span class="err"></span>
+      </div>
+
+      <!-- Destination -->
+      <div class="ff">
+        <label>Preferred Destination <span class="req">*</span></label>
+        <select id="dest">
+          <option value="">Choose...</option>
+          <option>Kenya</option>
+          <option>Tanzania</option>
+          <option>Kenya & Tanzania</option>
+        </select>
+        <span class="err"></span>
+      </div>
+
+      <!-- Month -->
+      <div class="ff">
+        <label>Travel Month</label>
+        <select id="month">
+          <option value="">Not Decided Yet</option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+      </div>
+
+      <!-- Travellers -->
+      <div class="ff">
+        <label>Number of Travellers <span class="req">*</span></label>
+        <select id="travelers">
+          <option value="">Choose...</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5+</option>
+        </select>
+        <span class="err"></span>
+      </div>
+
+      <!-- Budget -->
+      <div class="ff">
+        <label>Estimated Budget / person</label>
+        <select id="budget">
+          <option value="">Choose...</option>
+          <option>₹50K – ₹1 Lakh</option>
+          <option>₹1 – ₹2 Lakh</option>
+          <option>₹2 – ₹3 Lakh</option>
+          <option>₹3 – ₹5 Lakh</option>
+          <option>₹5 Lakh+</option>
+        </select>
+      </div>
+
+      <!-- Trip Type -->
+      <div class="ff full">
+        <label>Type of Trip</label>
+
+        <div class="trip-chips" style="display:flex;flex-wrap:wrap;gap:8px">
+          <button type="button" class="trip-chip">Family Holiday</button>
+          <button type="button" class="trip-chip">Honeymoon</button>
+          <button type="button" class="trip-chip">Friends Group</button>
+          <button type="button" class="trip-chip">Solo Travel</button>
+          <button type="button" class="trip-chip">Corporate Group</button>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="ff full">
+        <label>Special Requirements</label>
+        <textarea
+          id="notes"
+          placeholder="Indian food, vegetarian / Jain meals, luxury lodges, kids-friendly safari, etc."></textarea>
+      </div>
+
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="width:100%;justify-content:center;margin-top:20px;padding:17px;font-size:16px">
+
+      Get My Free Safari Quote
+      <span class="ico" data-ico="arrow"></span>
+
+    </button>
+
+    <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px">
+      🔒 Your details are safe with us. No spam, ever.
+    </p>
+
+  </form>
+
+</div>
+
 
 
 

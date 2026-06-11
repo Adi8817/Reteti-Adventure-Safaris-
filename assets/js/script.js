@@ -474,25 +474,25 @@
       name: "Serengeti",
       tag: "Endless plains & predators",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/img15.jpg",
     },
     {
       name: "Ngorongoro Crater",
       tag: "A natural wildlife arena",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/img13.jpg",
     },
     {
       name: "Tarangire",
       tag: "Giant baobabs & elephants",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/img10.jpg",
     },
     {
       name: "Lake Manyara",
       tag: "Tree-climbing lions",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/img12.jpg",
     },
     {
       name: "Zanzibar",
@@ -504,19 +504,19 @@
       name: "Lake Natron",
       tag: "Flamingo-pink shores",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/img14.jpg",
     },
     {
       name: "Mt Kilimanjaro",
       tag: "Africa's highest peak",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/img12.jpg",
     },
     {
       name: "Mahale Mountains",
       tag: "Wild chimpanzees",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/img9.jpg",
     },
   ];
 
@@ -1128,38 +1128,180 @@
     });
   }
 
+  // function renderTestimonials() {
+  //   var g = document.getElementById("testi-track");
+  //   TESTIMONIALS.forEach(function (t, i) {
+  //     g.appendChild(
+  //       el(
+  //         '<div class="testi-slide">' +
+  //           '<span class="ico" data-ico="quote" style="width:38px;height:38px;color:var(--gold)"></span>' +
+  //           '<span class="stars">' +
+  //           stars(t.rating) +
+  //           "</span>" +
+  //           '<p style="font-size:14.5px;line-height:1.6;color:rgba(243,251,233,0.86);margin:12px 0 18px;flex:1">"' +
+  //           esc(t.text) +
+  //           '"</p>' +
+  //           '<div style="display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)">' +
+  //           '<div style="width:46px;height:46px;border-radius:50%;background:' +
+  //           TESTI_COLORS[i % TESTI_COLORS.length] +
+  //           ';display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:17px;color:#fff;flex-shrink:0">' +
+  //           esc(t.name[0]) +
+  //           "</div>" +
+  //           '<div><div class="head" style="font-weight:800;font-size:15px;color:#fff;line-height:1.2">' +
+  //           esc(t.name) +
+  //           "</div>" +
+  //           '<div style="font-size:12.5px;color:var(--lime-bright);font-weight:600;margin-top:2px"><span class="ico" data-ico="pin" style="width:12px;height:12px;display:inline-flex;vertical-align:-1px"></span> ' +
+  //           esc(t.city) +
+  //           " · " +
+  //           esc(t.trip) +
+  //           "</div></div>" +
+  //           "</div></div>",
+  //       ),
+  //     );
+  //   });
+  // }
+
+
   function renderTestimonials() {
-    var g = document.getElementById("testi-track");
-    TESTIMONIALS.forEach(function (t, i) {
-      g.appendChild(
-        el(
-          '<div class="testi-slide">' +
-            '<span class="ico" data-ico="quote" style="width:38px;height:38px;color:var(--gold)"></span>' +
-            '<span class="stars">' +
-            stars(t.rating) +
-            "</span>" +
-            '<p style="font-size:14.5px;line-height:1.6;color:rgba(243,251,233,0.86);margin:12px 0 18px;flex:1">"' +
-            esc(t.text) +
-            '"</p>' +
-            '<div style="display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)">' +
-            '<div style="width:46px;height:46px;border-radius:50%;background:' +
-            TESTI_COLORS[i % TESTI_COLORS.length] +
-            ';display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:17px;color:#fff;flex-shrink:0">' +
-            esc(t.name[0]) +
-            "</div>" +
-            '<div><div class="head" style="font-weight:800;font-size:15px;color:#fff;line-height:1.2">' +
-            esc(t.name) +
-            "</div>" +
-            '<div style="font-size:12.5px;color:var(--lime-bright);font-weight:600;margin-top:2px"><span class="ico" data-ico="pin" style="width:12px;height:12px;display:inline-flex;vertical-align:-1px"></span> ' +
-            esc(t.city) +
-            " · " +
-            esc(t.trip) +
-            "</div></div>" +
-            "</div></div>",
-        ),
-      );
-    });
-  }
+var g = document.getElementById("testi-track");
+
+TESTIMONIALS.forEach(function (t, i) {
+g.appendChild(
+el(
+'<div class="testi-slide" style="' +
+     'background:linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));' +
+     'border:1px solid rgba(255,255,255,0.08);' +
+     'border-radius:32px;' +
+     'padding:32px 28px;' +
+     'min-height:360px;' +
+     'display:flex;' +
+     'flex-direction:column;' +
+     'backdrop-filter:blur(14px);' +
+     'box-shadow:0 15px 40px rgba(0,0,0,.15);' +
+     'transition:all .35s ease;' +
+     'overflow:hidden;' +
+     'position:relative;' +
+     '">' +
+
+
+    /* TOP BAR */
+    '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">' +
+
+    /* GOOGLE VERIFIED REVIEW TAG */
+    '<div style="' +
+    'display:inline-flex;' +
+    'align-items:center;' +
+    'gap:10px;' +
+    'padding:12px 18px;' +
+    'border-radius:999px;' +
+    'background:rgba(255,255,255,.06);' +
+    'border:1px solid rgba(255,255,255,.10);' +
+    'backdrop-filter:blur(10px);' +
+    'box-shadow:inset 0 1px 0 rgba(255,255,255,.05)' +
+    '">' +
+
+    '<span style="' +
+    'font-size:28px;' +
+    'font-weight:900;' +
+    'color:#F4B53F;' +
+    'font-family:Arial,sans-serif;' +
+    'line-height:1' +
+    '">G</span>' +
+
+    '<span style="' +
+    'font-size:14px;' +
+    'font-weight:700;' +
+    'color:#fff;' +
+    'letter-spacing:.2px' +
+    '">Verified Review</span>' +
+
+    '</div>' +
+
+    /* STAR RATING */
+    '<span class="stars">' +
+    stars(t.rating) +
+    '</span>' +
+
+    '</div>' +
+
+    /* REVIEW TEXT */
+    '<p style="' +
+    'font-size:15.5px;' +
+    'line-height:1.9;' +
+    'color:rgba(243,251,233,.88);' +
+    'margin:0 0 28px;' +
+    'flex:1;' +
+    '">' +
+    '"' +
+    esc(t.text) +
+    '"' +
+    '</p>' +
+
+    /* FOOTER */
+    '<div style="' +
+    'padding-top:22px;' +
+    'border-top:1px solid rgba(255,255,255,.08);' +
+    'display:flex;' +
+    'align-items:center;' +
+    'gap:16px">' +
+
+    /* AVATAR */
+    '<div style="' +
+    'width:56px;' +
+    'height:56px;' +
+    'border-radius:50%;' +
+    'background:' +
+    TESTI_COLORS[i % TESTI_COLORS.length] +
+    ';display:grid;' +
+    'place-items:center;' +
+    'font-family:var(--head);' +
+    'font-weight:800;' +
+    'font-size:18px;' +
+    'color:#fff;' +
+    'box-shadow:0 10px 25px rgba(0,0,0,.2);' +
+    'flex-shrink:0">' +
+    esc(t.name[0]) +
+    '</div>' +
+
+    /* USER INFO */
+    '<div>' +
+    '<div class="head" style="' +
+    'font-weight:800;' +
+    'font-size:17px;' +
+    'color:#fff;' +
+    'line-height:1.2">' +
+    esc(t.name) +
+    '</div>' +
+
+    '<div style="' +
+    'font-size:13px;' +
+    'color:rgba(180,226,92,.92);' +
+    'font-weight:600;' +
+    'margin-top:5px">' +
+
+    '<span class="ico" data-ico="pin" style="' +
+    'width:12px;' +
+    'height:12px;' +
+    'display:inline-flex;' +
+    'vertical-align:-1px"></span> ' +
+
+    esc(t.city) +
+    ' • ' +
+    esc(t.trip) +
+
+    '</div>' +
+    '</div>' +
+
+    '</div>' +
+    '</div>'
+  )
+);
+
+
+});
+}
+
+
 
   function renderPartners() {
     var g = document.getElementById("partners-grid");
@@ -1329,6 +1471,13 @@
       }
     });
   }
+
+
+
+
+
+
+  
   function fieldText(k, label, req, ph, type) {
     return (
       '<div class="ff" data-k="' +
@@ -1567,8 +1716,8 @@
     initFormButtons();
     initReveal();
 
-    document.getElementById("page-loading").style.display = "none";
-    document.getElementById("app").style.display = "block";
+    // document.getElementById("page-loading").style.display = "none";
+    // document.getElementById("app").style.display = "block";
     requestAnimationFrame(initReveal);
   }
 

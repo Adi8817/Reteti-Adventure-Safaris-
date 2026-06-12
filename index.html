@@ -135,7 +135,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       <div class="hero-image-wrapper">
 
         <img
-          src="assets/images/backgroundimage.jpg"
+          src="assets/images/background.jpg"
           alt="Safari Adventure"
           class="hero-image"
         >
@@ -240,149 +240,294 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 
     
-<div class="card reveal">
+<!-- =========================================
+     SAFARI FORM SECTION ONLY
+========================================= -->
 
-  <form id="safari-form" novalidate>
+<section class="sqf-form-section">
 
-    <div class="grid qf-grid" style="grid-template-columns:1fr 1fr;gap:15px">
+  <div class="sqf-form-panel">
 
-      <!-- Full Name -->
-      <div class="ff">
-        <label>Full Name <span class="req">*</span></label>
-        <input type="text" id="name" placeholder="e.g. Priya Sharma">
-        <span class="err"></span>
+    <div class="sqf-form-header">
+      <div class="sqf-form-eyebrow">
+        Free Personalised Quote
       </div>
 
-      <!-- Mobile -->
-      <div class="ff">
-        <label>Mobile Number <span class="req">*</span></label>
-        <div class="phone-row">
-          <span class="cc">🇮🇳 +91</span>
-          <input
-            type="text"
-            id="mobile"
-            maxlength="10"
-            inputmode="numeric"
-            placeholder="10-digit number">
-        </div>
-        <span class="err"></span>
-      </div>
+      <h3>Tell us about your trip</h3>
 
-      <!-- Email -->
-      <div class="ff">
-        <label>Email Address <span class="req">*</span></label>
-        <input type="email" id="email" placeholder="you@email.com">
-        <span class="err"></span>
-      </div>
-
-      <!-- City -->
-      <div class="ff">
-        <label>City (India) <span class="req">*</span></label>
-        <input type="text" id="city" placeholder="e.g. Mumbai">
-        <span class="err"></span>
-      </div>
-
-      <!-- Destination -->
-      <div class="ff">
-        <label>Preferred Destination <span class="req">*</span></label>
-        <select id="dest">
-          <option value="">Choose...</option>
-          <option>Kenya</option>
-          <option>Tanzania</option>
-          <option>Kenya & Tanzania</option>
-        </select>
-        <span class="err"></span>
-      </div>
-
-      <!-- Month -->
-      <div class="ff">
-        <label>Travel Month</label>
-        <select id="month">
-          <option value="">Not Decided Yet</option>
-          <option>January</option>
-          <option>February</option>
-          <option>March</option>
-          <option>April</option>
-          <option>May</option>
-          <option>June</option>
-          <option>July</option>
-          <option>August</option>
-          <option>September</option>
-          <option>October</option>
-          <option>November</option>
-          <option>December</option>
-        </select>
-      </div>
-
-      <!-- Travellers -->
-      <div class="ff">
-        <label>Number of Travellers <span class="req">*</span></label>
-        <select id="travelers">
-          <option value="">Choose...</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5+</option>
-        </select>
-        <span class="err"></span>
-      </div>
-
-      <!-- Budget -->
-      <div class="ff">
-        <label>Estimated Budget / person</label>
-        <select id="budget">
-          <option value="">Choose...</option>
-          <option>₹50K – ₹1 Lakh</option>
-          <option>₹1 – ₹2 Lakh</option>
-          <option>₹2 – ₹3 Lakh</option>
-          <option>₹3 – ₹5 Lakh</option>
-          <option>₹5 Lakh+</option>
-        </select>
-      </div>
-
-      <!-- Trip Type -->
-      <div class="ff full">
-        <label>Type of Trip</label>
-
-        <div class="trip-chips" style="display:flex;flex-wrap:wrap;gap:8px">
-          <button type="button" class="trip-chip">Family Holiday</button>
-          <button type="button" class="trip-chip">Honeymoon</button>
-          <button type="button" class="trip-chip">Friends Group</button>
-          <button type="button" class="trip-chip">Solo Travel</button>
-          <button type="button" class="trip-chip">Corporate Group</button>
-        </div>
-      </div>
-
-      <!-- Notes -->
-      <div class="ff full">
-        <label>Special Requirements</label>
-        <textarea
-          id="notes"
-          placeholder="Indian food, vegetarian / Jain meals, luxury lodges, kids-friendly safari, etc."></textarea>
-      </div>
-
+      <p>
+        We'll send a tailored safari plan to your inbox —
+        no obligation, no spam.
+      </p>
     </div>
 
-    <button
-      type="submit"
-      class="btn btn-primary"
-      style="width:100%;justify-content:center;margin-top:20px;padding:17px;font-size:16px">
+    <form id="sqf-form" novalidate autocomplete="on">
 
-      Get My Free Safari Quote
-      <span class="ico" data-ico="arrow"></span>
+      <div class="sqf-fields">
 
-    </button>
+        <!-- Name -->
+        <div class="sqf-field" id="sqf-f-name">
+          <label for="sqf-name">
+            Full Name
+            <span class="sqf-req">*</span>
+          </label>
 
-    <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px">
-      🔒 Your details are safe with us. No spam, ever.
-    </p>
+          <input
+            type="text"
+            id="sqf-name"
+            name="name"
+            placeholder="e.g. Priya Sharma"
+            autocomplete="name"
+          >
 
-  </form>
+          <span class="sqf-error-msg">
+            Please enter your name
+          </span>
+        </div>
 
-</div>
+        <!-- Mobile -->
+        <div class="sqf-field" id="sqf-f-mobile">
+          <label for="sqf-mobile">
+            Mobile Number
+            <span class="sqf-req">*</span>
+          </label>
 
+          <div class="sqf-phone-row">
+            <span class="sqf-phone-prefix">
+              🇮🇳 +91
+            </span>
 
+            <input
+              type="tel"
+              id="sqf-mobile"
+              name="mobile"
+              maxlength="10"
+              inputmode="numeric"
+              placeholder="10-digit number"
+              autocomplete="tel-national"
+            >
+          </div>
+
+          <span class="sqf-error-msg">
+            Enter a valid 10-digit number
+          </span>
+        </div>
+
+        <!-- Email -->
+        <div class="sqf-field" id="sqf-f-email">
+          <label for="sqf-email">
+            Email Address
+            <span class="sqf-req">*</span>
+          </label>
+
+          <input
+            type="email"
+            id="sqf-email"
+            name="email"
+            placeholder="you@email.com"
+            autocomplete="email"
+          >
+
+          <span class="sqf-error-msg">
+            Enter a valid email address
+          </span>
+        </div>
+
+        <!-- City -->
+        <div class="sqf-field" id="sqf-f-city">
+          <label for="sqf-city">
+            Your City
+            <span class="sqf-req">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="sqf-city"
+            name="city"
+            placeholder="e.g. Mumbai"
+            autocomplete="address-level2"
+          >
+
+          <span class="sqf-error-msg">
+            Please enter your city
+          </span>
+        </div>
+
+        <!-- Destination -->
+        <div class="sqf-field" id="sqf-f-dest">
+          <label for="sqf-dest">
+            Destination
+            <span class="sqf-req">*</span>
+          </label>
+
+          <div class="sqf-select-wrap">
+            <select id="sqf-dest" name="destination">
+              <option value="">
+                Choose destination…
+              </option>
+
+              <option value="kenya">
+                Kenya
+              </option>
+
+              <option value="tanzania">
+                Tanzania
+              </option>
+
+              <option value="both">
+                Kenya & Tanzania
+              </option>
+            </select>
+          </div>
+
+          <span class="sqf-error-msg">
+            Please select a destination
+          </span>
+        </div>
+
+        <!-- Travel Month -->
+        <div class="sqf-field">
+          <label for="sqf-month">
+            Travel Month
+          </label>
+
+          <div class="sqf-select-wrap">
+            <select id="sqf-month" name="month">
+              <option value="">
+                Not decided yet
+              </option>
+
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Travellers -->
+        <div class="sqf-field" id="sqf-f-travelers">
+          <label for="sqf-travelers">
+            No. of Travellers
+            <span class="sqf-req">*</span>
+          </label>
+
+          <div class="sqf-select-wrap">
+            <select
+              id="sqf-travelers"
+              name="travelers"
+            >
+              <option value="">
+                How many?
+              </option>
+
+              <option value="1">
+                1 — Solo
+              </option>
+
+              <option value="2">
+                2 — Couple
+              </option>
+
+              <option value="3">
+                3 People
+              </option>
+
+              <option value="4">
+                4 People
+              </option>
+
+              <option value="5+">
+                5 or more
+              </option>
+            </select>
+          </div>
+
+          <span class="sqf-error-msg">
+            Please select number of travellers
+          </span>
+        </div>
+
+        <!-- Budget -->
+        <div class="sqf-field">
+          <label for="sqf-budget">
+            Budget / Person
+          </label>
+
+          <div class="sqf-select-wrap">
+            <select id="sqf-budget" name="budget">
+              <option value="">
+                Select a range…
+              </option>
+
+              <option>
+                ₹50K – ₹1 Lakh
+              </option>
+
+              <option>
+                ₹1 – ₹2 Lakh
+              </option>
+
+              <option>
+                ₹2 – ₹3 Lakh
+              </option>
+
+              <option>
+                ₹3 – ₹5 Lakh
+              </option>
+
+              <option>
+                ₹5 Lakh+
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Special Requirements -->
+        <div class="sqf-field sqf-field-full">
+          <label for="sqf-notes">
+            Special Requirements
+          </label>
+
+          <textarea
+            id="sqf-notes"
+            name="notes"
+            placeholder="Jain / vegetarian meals, wheelchair access, luxury lodges..."
+          ></textarea>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="sqf-cta-area">
+
+        <button
+          type="submit"
+          class="sqf-submit"
+          id="sqf-submit"
+        >
+          Get My Personalised Safari Plan
+        </button>
+
+        <p class="sqf-privacy">
+          🔒 Your details are private · No spam, ever
+        </p>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
 
 
 
@@ -475,7 +620,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <!-- RIGHT IMAGE -->
     <div class="about-image reveal">
 
-      <img src="assets/images/about.jpg"
+      <img src="assets/images/nature.jpg"
            alt="Safari Adventure">
 
       <div class="trust-card">
@@ -688,7 +833,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 <div class="whyus-visual-ico"><span class="ico" data-ico="food"></span></div>
                 <div><div class="head" style="font-weight:800;font-size:19px;color:#fff">Indian, Veg &amp; Jain meals</div><div style="font-size:13.5px;color:rgba(234,246,221,0.8)">Arranged at selected lodges &amp; camps</div></div>
               </div>
-              <div class="whyus-tags"><span>Pure-Veg</span><span>Jain Meals</span><span>Hindi-friendly Guides</span><span>Family-First</span></div>
+              <div class="whyus-tags"><span>Pure-Veg</span><span>Jain Meals</span><span>Family-First</span></div>
             </div>
           </div>
           <div class="grid whyus-grid" id="whyus-grid" style="grid-template-columns:1fr 1fr;gap:18px"></div>
@@ -784,7 +929,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </section>
 
     <!-- ============ QUOTE FORM (detailed) ============ -->
-    <section id="quote" class="quote-sec">
+    <!-- <section id="quote" class="quote-sec">
       <div class="quote-blob"></div>
       <div class="wrap" style="position:relative">
         <div class="reveal qs-grid">
@@ -806,7 +951,487 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+
+
+
+
+
+
+
+
+
+
+<section id="quote" class="quote-sec">
+  
+  <div class="quote-blob"></div>
+
+  <div class="wrap" style="position:relative">
+
+    <div class="reveal qs-grid">
+
+      <!-- LEFT CONTENT -->
+      <div class="form-pitch">
+
+        <div class="eyebrow on-dark">
+          For Indian Tourists
+        </div>
+
+        <h2 class="head quote-h2">
+          Get your free, customised
+          <span style="color:var(--gold)">
+            India-to-Africa quote
+          </span>
+        </h2>
+
+        <p
+          class="lede"
+          style="
+          margin-top:18px;
+          color:rgba(243,251,233,0.8)"
+        >
+          Fill the form and our India desk crafts a
+          personalised itinerary with Indian food,
+          the right lodges and the best price —
+          no obligation.
+        </p>
+
+        <!-- <div class="quote-feats">
+
+          <div>
+            <span class="qf-ico">
+              <span class="ico" data-ico="check"></span>
+            </span>
+
+            <span>
+              Personalised day-by-day itinerary
+            </span>
+          </div>
+
+          <div>
+            <span class="qf-ico">
+              <span class="ico" data-ico="food"></span>
+            </span>
+
+            <span>
+              Indian, veg & Jain meal options
+            </span>
+          </div>
+
+          <div>
+            <span class="qf-ico">
+              <span class="ico" data-ico="support"></span>
+            </span>
+
+            <span>
+              Reply within 24 hours
+            </span>
+          </div>
+
+        </div> -->
+
+
+
+        <div class="quote-feats">
+
+  <div class="quote-feature-card">
+
+    <div class="quote-icon">
+      ✓
+    </div>
+
+    <div>
+      <h4>Personalised Itinerary</h4>
+      <p>
+        Day-by-day safari planning
+        based on your budget.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="quote-feature-card">
+
+    <div class="quote-icon">
+      🍽
+    </div>
+
+    <div>
+      <h4>Indian & Jain Meals</h4>
+      <p>
+        Veg, Jain & Indian food
+        options across lodges.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="quote-feature-card">
+
+    <div class="quote-icon">
+      ⚡
+    </div>
+
+    <div>
+      <h4>Reply Within 24 Hours</h4>
+      <p>
+        Fast personalised quote
+        from our India desk.
+      </p>
+    </div>
+
+  </div>
+  <div class="quote-feature-card">
+
+  <div class="quote-icon">
+    ⭐
+  </div>
+
+  <div>
+    <h4>Trusted By Indian Families</h4>
+
+    <p>
+      1,000+ Indian travellers planned
+      their safari with us successfully.
+    </p>
+  </div>
+
+</div>
+
+</div>
+
+<div class="quote-trust-row">
+
+  <div class="quote-trust-item">
+    <strong>1,200+</strong>
+    <span>Trips Planned</span>
+  </div>
+
+  <div class="quote-trust-item">
+    <strong>4.9★</strong>
+    <span>Traveller Rating</span>
+  </div>
+
+  <div class="quote-trust-item">
+    <strong>24 Hrs</strong>
+    <span>Fast Response</span>
+  </div>
+
+</div>
+
+        <a
+          href="https://wa.me/254700302965"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-wa"
+          style="margin-top:28px"
+        >
+          <span
+            class="ico"
+            data-ico="whatsapp"
+          ></span>
+
+          Prefer WhatsApp? Chat now
+        </a>
+
+      </div>
+
+
+      <!-- RIGHT FORM -->
+      <div class="quote-form-wrap">
+
+        <section class="sqf-form-section">
+
+          <div class="sqf-form-panel">
+
+            <div class="sqf-form-header">
+
+              <div class="sqf-form-eyebrow">
+                Free Personalised Quote
+              </div>
+
+               <h3>Tell us about your trip</h3>
+
+              <p>
+                We'll send a tailored safari plan
+                to your inbox — no obligation,
+                no spam.
+              </p>
+
+            </div>
+
+
+            <form
+              id="sqf-form"
+              novalidate
+              autocomplete="on"
+            >
+
+              <div class="sqf-fields">
+
+                <!-- NAME -->
+                <div
+                  class="sqf-field"
+                  id="sqf-f-name"
+                >
+                  <label for="sqf-name">
+                    Full Name
+                    <span class="sqf-req">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="sqf-name"
+                    placeholder="e.g. Priya Sharma"
+                  >
+                </div>
+
+
+                <!-- MOBILE -->
+                <div
+                  class="sqf-field"
+                  id="sqf-f-mobile"
+                >
+                  <label for="sqf-mobile">
+                    Mobile Number
+                    <span class="sqf-req">*</span>
+                  </label>
+
+                  <div class="sqf-phone-row">
+
+                    <span class="sqf-phone-prefix">
+                      🇮🇳 +91
+                    </span>
+
+                    <input
+                      type="tel"
+                      id="sqf-mobile"
+                      maxlength="10"
+                      placeholder="10-digit number"
+                    >
+
+                  </div>
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="sqf-field">
+                  <label for="sqf-email">
+                    Email Address
+                    <span class="sqf-req">*</span>
+                  </label>
+
+                  <input
+                    type="email"
+                    id="sqf-email"
+                    placeholder="you@email.com"
+                  >
+                </div>
+
+
+                <!-- CITY -->
+                <div class="sqf-field">
+                  <label for="sqf-city">
+                    Your City
+                    <span class="sqf-req">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="sqf-city"
+                    placeholder="e.g. Mumbai"
+                  >
+                </div>
+
+
+                <!-- DESTINATION -->
+                <div class="sqf-field">
+
+                  <label for="sqf-dest">
+                    Destination
+                    <span class="sqf-req">*</span>
+                  </label>
+
+                  <div class="sqf-select-wrap">
+
+                    <select id="sqf-dest">
+                      <option>
+                        Choose destination…
+                      </option>
+                      <option>Kenya</option>
+                      <option>Tanzania</option>
+                      <option>
+                        Kenya & Tanzania
+                      </option>
+                    </select>
+
+                  </div>
+                </div>
+
+
+                <!-- MONTH -->
+                <div class="sqf-field">
+
+                  <label for="sqf-month">
+                    Travel Month
+                  </label>
+
+                  <div class="sqf-select-wrap">
+
+                    <select id="sqf-month">
+                      <option>
+                        Not decided yet
+                      </option>
+                      <option>January</option>
+                      <option>February</option>
+                      <option>March</option>
+                      <option>April</option>
+                      <option>May</option>
+                      <option>June</option>
+                      <option>July</option>
+                      <option>August</option>
+                      <option>September</option>
+                      <option>October</option>
+                      <option>November</option>
+                      <option>December</option>
+                    </select>
+
+                  </div>
+                </div>
+
+
+                <!-- TRAVELLERS -->
+                <div class="sqf-field">
+
+                  <label for="sqf-travelers">
+                    No. of Travellers
+                  </label>
+
+                  <div class="sqf-select-wrap">
+
+                    <select id="sqf-travelers">
+                      <option>
+                        How many?
+                      </option>
+                      <option>1 — Solo</option>
+                      <option>2 — Couple</option>
+                      <option>3 People</option>
+                      <option>4 People</option>
+                      <option>5+ People</option>
+                    </select>
+
+                  </div>
+                </div>
+
+
+                <!-- BUDGET -->
+                <div class="sqf-field">
+
+                  <label for="sqf-budget">
+                    Budget / Person
+                  </label>
+
+                  <div class="sqf-select-wrap">
+
+                    <select id="sqf-budget">
+                      <option>
+                        Select range…
+                      </option>
+                      <option>
+                        ₹50K – ₹1 Lakh
+                      </option>
+                      <option>
+                        ₹1 – ₹2 Lakh
+                      </option>
+                      <option>
+                        ₹2 – ₹3 Lakh
+                      </option>
+                      <option>
+                        ₹3 – ₹5 Lakh
+                      </option>
+                      <option>
+                        ₹5 Lakh+
+                      </option>
+                    </select>
+
+                  </div>
+                </div>
+
+
+                <!-- NOTES -->
+                <div class="sqf-field sqf-field-full">
+
+                  <label for="sqf-notes">
+                    Special Requirements
+                  </label>
+
+                  <textarea
+                    id="sqf-notes"
+                    placeholder="Jain meals, luxury lodges, wheelchair access..."
+                  ></textarea>
+
+                </div>
+
+              </div>
+
+
+              <div class="sqf-cta-area">
+
+                <button
+                  type="submit"
+                  class="sqf-submit"
+                >
+                  Get My Personalised Safari Plan
+                </button>
+
+                <p class="sqf-privacy">
+                  🔒 Your details are private ·
+                  No spam, ever
+                </p>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- ============ PARTNERS ============ -->
     <section id="partners" class="section" style="background:var(--cream);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)">
@@ -828,6 +1453,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <img src="assets/reteti-logo.png" alt="Reteti Adventure Safaris" style="height:76px;margin-bottom:18px" />
             <p style="font-size:14.5px;line-height:1.65;color:rgba(223,236,207,0.7);max-width:320px">Discover the allure of East Africa with Reteti Adventure Safaris — exclusive, India-friendly safaris to captivating Kenya and Tanzania.</p>
             <div class="footer-social" id="footer-social"></div>
+   
           </div>
           <div>
             <h4 class="head footer-col-title">Safaris</h4>
@@ -862,11 +1488,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <div class="footer-contact" id="footer-contact"></div>
       </div>
       <div class="footer-bar">
-        <div class="wrap footer-bar-inner">
-          <span id="footer-copy"></span>
-          <span>Exclusive safaris from India to Kenya &amp; Tanzania 🌍</span>
-        </div>
-      </div>
+  <div class="wrap footer-bar-inner">
+
+    <span id="footer-copy">
+      Copyright © 2026 Reteti Adventure Safaris
+    </span>
+
+    <div class="footer-bottom-right">
+      <!-- <span>
+        Exclusive safaris from India to Kenya & Tanzania 🌍
+      </span> -->
+
+      <!-- <span class="footer-divider">|</span> -->
+
+      <span class="footer-credit">
+        <!-- Designed By
+        <strong>DUENCY</strong> -->
+
+        <a
+  href="https://duency.com"
+  target="_blank"
+  rel="noopener"
+  class="footer-credit"
+>
+  Designed By
+  <strong>DUENCY</strong>
+</a>
+      </span>
+    </div>
+
+  </div>
+</div>
     </footer>
 
   </div>

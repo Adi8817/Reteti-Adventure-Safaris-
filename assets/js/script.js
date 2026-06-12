@@ -498,7 +498,7 @@
       name: "Zanzibar",
       tag: "Turquoise beach paradise",
       icon: "camera",
-      image: "assets/images/destinations/backgroundimage.jpg",
+      image: "assets/images/destinations/zanibar.jpg",
     },
     {
       name: "Lake Natron",
@@ -1320,48 +1320,133 @@ el(
     });
   }
 
+  // function renderFooter() {
+  //   var s = document.getElementById("footer-social");
+  //   [
+  //     ["instagram", CONTACT.ig],
+  //     ["facebook", CONTACT.fb],
+  //     ["tripadvisor", CONTACT.ta],
+  //   ].forEach(function (pair) {
+  //     s.appendChild(
+  //       el(
+  //         '<a href="' +
+  //           pair[1] +
+  //           '" target="_blank" rel="noopener" aria-label="' +
+  //           pair[0] +
+  //           '"><span class="ico" data-ico="' +
+  //           pair[0] +
+  //           '" style="width:20px;height:20px"></span></a>',
+  //       ),
+  //     );
+  //   });
+  //   var c = document.getElementById("footer-contact");
+  //   [
+  //     ["pin", CONTACT.location, "#"],
+  //     ["phone", CONTACT.phone, "tel:" + PHONE_RAW],
+  //     ["mail", CONTACT.email, "mailto:" + CONTACT.email],
+  //   ].forEach(function (row) {
+  //     c.appendChild(
+  //       el(
+  //         '<a href="' +
+  //           row[2] +
+  //           '"><span class="fc-ico"><span class="ico" data-ico="' +
+  //           row[0] +
+  //           '"></span></span><span>' +
+  //           esc(row[1]) +
+  //           "</span></a>",
+  //       ),
+  //     );
+  //   });
+  //   document.getElementById("footer-copy").textContent =
+  //     "© " +
+  //     new Date().getFullYear() +
+  //     " Reteti Adventure Safaris. All rights reserved.";
+  // }
+
   function renderFooter() {
-    var s = document.getElementById("footer-social");
-    [
-      ["instagram", CONTACT.ig],
-      ["facebook", CONTACT.fb],
-      ["tripadvisor", CONTACT.ta],
-    ].forEach(function (pair) {
-      s.appendChild(
-        el(
-          '<a href="' +
-            pair[1] +
-            '" target="_blank" rel="noopener" aria-label="' +
-            pair[0] +
-            '"><span class="ico" data-ico="' +
-            pair[0] +
-            '" style="width:20px;height:20px"></span></a>',
-        ),
-      );
-    });
-    var c = document.getElementById("footer-contact");
-    [
-      ["pin", CONTACT.location, "#"],
-      ["phone", CONTACT.phone, "tel:" + PHONE_RAW],
-      ["mail", CONTACT.email, "mailto:" + CONTACT.email],
-    ].forEach(function (row) {
-      c.appendChild(
-        el(
-          '<a href="' +
-            row[2] +
-            '"><span class="fc-ico"><span class="ico" data-ico="' +
-            row[0] +
-            '"></span></span><span>' +
-            esc(row[1]) +
-            "</span></a>",
-        ),
-      );
-    });
-    document.getElementById("footer-copy").textContent =
-      "© " +
-      new Date().getFullYear() +
-      " Reteti Adventure Safaris. All rights reserved.";
-  }
+
+  /* ==========================
+     SOCIAL ICONS
+  ========================== */
+
+  var s = document.getElementById("footer-social");
+
+  [
+    ["facebook", CONTACT.fb],
+    ["instagram", CONTACT.ig],
+    ["x", "#"],
+    ["linkedin", "#"],
+  ].forEach(function (pair) {
+
+    s.appendChild(
+      el(
+        '<a href="' +
+          pair[1] +
+          '" target="_blank" rel="noopener" aria-label="' +
+          pair[0] +
+          '" class="footer-social-item">' +
+
+          '<i class="fa-brands fa-' +
+          (pair[0] === "facebook"
+            ? "facebook-f"
+            : pair[0] === "instagram"
+            ? "instagram"
+            : pair[0] === "x"
+            ? "x-twitter"
+            : "linkedin-in") +
+          '"></i>' +
+
+        "</a>"
+      )
+    );
+
+  });
+
+
+  /* ==========================
+     CONTACT INFO
+  ========================== */
+
+  var c = document.getElementById("footer-contact");
+
+  [
+    ["pin", CONTACT.location, "#"],
+    ["phone", CONTACT.phone, "tel:" + PHONE_RAW],
+    ["mail", CONTACT.email, "mailto:" + CONTACT.email],
+  ].forEach(function (row) {
+
+    c.appendChild(
+      el(
+        '<a href="' +
+          row[2] +
+          '" class="footer-contact-item">' +
+
+          '<span class="fc-ico">' +
+          '<span class="ico" data-ico="' +
+          row[0] +
+          '"></span>' +
+          "</span>" +
+
+          "<span>" +
+          esc(row[1]) +
+          "</span>" +
+
+        "</a>"
+      )
+    );
+
+  });
+
+
+  /* ==========================
+     COPYRIGHT
+  ========================== */
+
+  document.getElementById("footer-copy").textContent =
+    "Copyright © " +
+    new Date().getFullYear() +
+    " Reteti Adventure Safaris";
+}
 
   document.querySelectorAll(".stars[data-stars]").forEach(function (s) {
     s.innerHTML = stars(parseInt(s.getAttribute("data-stars"), 10));
@@ -1375,102 +1460,102 @@ el(
       })
       .join("");
   }
-  function buildForm(container, ctaLabel) {
-    var html =
-      "<form novalidate>" +
-      '<div class="grid qf-grid" style="grid-template-columns:1fr 1fr;gap:15px">' +
-      fieldText("name", "Full Name", true, "e.g. Priya Sharma") +
-      '<div class="ff" data-k="mobile"><label>Mobile Number <span class="req">*</span></label>' +
-      '<div class="phone-row"><span class="cc">🇮🇳 +91</span><input data-f="mobile" inputmode="numeric" maxlength="10" placeholder="10-digit number" /></div>' +
-      '<span class="err"></span></div>' +
-      fieldText("email", "Email Address", true, "you@email.com", "email") +
-      fieldText("city", "City (India)", true, "e.g. Mumbai") +
-      fieldSelect("dest", "Preferred Destination", true, DESTS) +
-      fieldSelect("month", "Travel Month", false, MONTHS, "Not Decided Yet") +
-      fieldSelect("travelers", "Number of Travellers", true, TRAVELLERS) +
-      fieldSelect("budget", "Estimated Budget / person", false, BUDGETS) +
-      '<div class="ff full"><label>Type of Trip</label><div class="trip-chips" style="display:flex;flex-wrap:wrap;gap:8px">' +
-      TRIPS.map(function (t) {
-        return (
-          '<button type="button" class="trip-chip" data-trip="' +
-          esc(t) +
-          '">' +
-          esc(t) +
-          "</button>"
-        );
-      }).join("") +
-      "</div></div>" +
-      '<div class="ff full"><label>Special Requirements</label><textarea data-f="notes" placeholder="Indian food, vegetarian / Jain meals, luxury lodges, kids-friendly safari, etc."></textarea></div>' +
-      "</div>" +
-      '<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;padding:17px;font-size:16px">' +
-      esc(ctaLabel) +
-      ' <span class="ico" data-ico="arrow"></span></button>' +
-      '<p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px">🔒 Your details are safe with us. No spam, ever.</p>' +
-      "</form>";
-    container.innerHTML = html;
-    hydrateIcons(container);
+  // function buildForm(container, ctaLabel) {
+  //   var html =
+  //     "<form novalidate>" +
+  //     '<div class="grid qf-grid" style="grid-template-columns:1fr 1fr;gap:15px">' +
+  //     fieldText("name", "Full Name", true, "e.g. Priya Sharma") +
+  //     '<div class="ff" data-k="mobile"><label>Mobile Number <span class="req">*</span></label>' +
+  //     '<div class="phone-row"><span class="cc">🇮🇳 +91</span><input data-f="mobile" inputmode="numeric" maxlength="10" placeholder="10-digit number" /></div>' +
+  //     '<span class="err"></span></div>' +
+  //     fieldText("email", "Email Address", true, "you@email.com", "email") +
+  //     fieldText("city", "City (India)", true, "e.g. Mumbai") +
+  //     fieldSelect("dest", "Preferred Destination", true, DESTS) +
+  //     fieldSelect("month", "Travel Month", false, MONTHS, "Not Decided Yet") +
+  //     fieldSelect("travelers", "Number of Travellers", true, TRAVELLERS) +
+  //     fieldSelect("budget", "Estimated Budget / person", false, BUDGETS) +
+  //     '<div class="ff full"><label>Type of Trip</label><div class="trip-chips" style="display:flex;flex-wrap:wrap;gap:8px">' +
+  //     TRIPS.map(function (t) {
+  //       return (
+  //         '<button type="button" class="trip-chip" data-trip="' +
+  //         esc(t) +
+  //         '">' +
+  //         esc(t) +
+  //         "</button>"
+  //       );
+  //     }).join("") +
+  //     "</div></div>" +
+  //     '<div class="ff full"><label>Special Requirements</label><textarea data-f="notes" placeholder="Indian food, vegetarian / Jain meals, luxury lodges, kids-friendly safari, etc."></textarea></div>' +
+  //     "</div>" +
+  //     '<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;padding:17px;font-size:16px">' +
+  //     esc(ctaLabel) +
+  //     ' <span class="ico" data-ico="arrow"></span></button>' +
+  //     '<p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px">🔒 Your details are safe with us. No spam, ever.</p>' +
+  //     "</form>";
+  //   container.innerHTML = html;
+  //   hydrateIcons(container);
 
-    var form = container.querySelector("form");
-    var trip = "";
-    container.querySelectorAll(".trip-chip").forEach(function (chip) {
-      chip.addEventListener("click", function () {
-        container.querySelectorAll(".trip-chip").forEach(function (c) {
-          c.classList.remove("on");
-        });
-        chip.classList.add("on");
-        trip = chip.getAttribute("data-trip");
-      });
-    });
+  //   var form = container.querySelector("form");
+  //   var trip = "";
+  //   container.querySelectorAll(".trip-chip").forEach(function (chip) {
+  //     chip.addEventListener("click", function () {
+  //       container.querySelectorAll(".trip-chip").forEach(function (c) {
+  //         c.classList.remove("on");
+  //       });
+  //       chip.classList.add("on");
+  //       trip = chip.getAttribute("data-trip");
+  //     });
+  //   });
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var vals = {};
-      [
-        "name",
-        "mobile",
-        "email",
-        "city",
-        "dest",
-        "month",
-        "travelers",
-        "budget",
-        "notes",
-      ].forEach(function (k) {
-        var input = container.querySelector('[data-f="' + k + '"]');
-        vals[k] = input ? input.value : "";
-      });
-      var errs = {};
-      if (!vals.name.trim()) errs.name = "Please enter your name";
-      if (!/^\d{10}$/.test(vals.mobile.replace(/\D/g, "")))
-        errs.mobile = "Enter a valid 10-digit mobile number";
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email))
-        errs.email = "Enter a valid email address";
-      if (!vals.city.trim()) errs.city = "Please enter your city";
-      if (!vals.dest) errs.dest = "Choose a destination";
-      if (!vals.travelers) errs.travelers = "Select travellers";
+  //   form.addEventListener("submit", function (e) {
+  //     e.preventDefault();
+  //     var vals = {};
+  //     [
+  //       "name",
+  //       "mobile",
+  //       "email",
+  //       "city",
+  //       "dest",
+  //       "month",
+  //       "travelers",
+  //       "budget",
+  //       "notes",
+  //     ].forEach(function (k) {
+  //       var input = container.querySelector('[data-f="' + k + '"]');
+  //       vals[k] = input ? input.value : "";
+  //     });
+  //     var errs = {};
+  //     if (!vals.name.trim()) errs.name = "Please enter your name";
+  //     if (!/^\d{10}$/.test(vals.mobile.replace(/\D/g, "")))
+  //       errs.mobile = "Enter a valid 10-digit mobile number";
+  //     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email))
+  //       errs.email = "Enter a valid email address";
+  //     if (!vals.city.trim()) errs.city = "Please enter your city";
+  //     if (!vals.dest) errs.dest = "Choose a destination";
+  //     if (!vals.travelers) errs.travelers = "Select travellers";
 
-      container.querySelectorAll(".ff").forEach(function (ff) {
-        var k = ff.getAttribute("data-k");
-        var errSpan = ff.querySelector(".err");
-        if (k && errs[k]) {
-          ff.classList.add("invalid");
-          if (errSpan) errSpan.textContent = errs[k];
-        } else {
-          ff.classList.remove("invalid");
-          if (errSpan) errSpan.textContent = "";
-        }
-      });
+  //     container.querySelectorAll(".ff").forEach(function (ff) {
+  //       var k = ff.getAttribute("data-k");
+  //       var errSpan = ff.querySelector(".err");
+  //       if (k && errs[k]) {
+  //         ff.classList.add("invalid");
+  //         if (errSpan) errSpan.textContent = errs[k];
+  //       } else {
+  //         ff.classList.remove("invalid");
+  //         if (errSpan) errSpan.textContent = "";
+  //       }
+  //     });
 
-      if (Object.keys(errs).length === 0) {
-        showSuccess(container, vals);
-      } else {
-        var firstBad = container.querySelector(
-          ".ff.invalid input, .ff.invalid select",
-        );
-        if (firstBad) firstBad.focus();
-      }
-    });
-  }
+  //     if (Object.keys(errs).length === 0) {
+  //       showSuccess(container, vals);
+  //     } else {
+  //       var firstBad = container.querySelector(
+  //         ".ff.invalid input, .ff.invalid select",
+  //       );
+  //       if (firstBad) firstBad.focus();
+  //     }
+  //   });
+  // }
 
 
 
@@ -1684,11 +1769,11 @@ el(
     renderPartners();
     renderFooter();
 
-    document.querySelectorAll(".form-card").forEach(function (fc) {
-      var cta = "Get My Free Safari Quote";
-      fc.setAttribute("data-cta", cta);
-      buildForm(fc, cta);
-    });
+    // document.querySelectorAll(".form-card").forEach(function (fc) {
+    //   var cta = "Get My Free Safari Quote";
+    //   fc.setAttribute("data-cta", cta);
+    //   buildForm(fc, cta);
+    // });
 
     hydrateImages();
     hydrateIcons(document);

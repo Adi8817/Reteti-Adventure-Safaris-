@@ -3117,7 +3117,7 @@ body::-webkit-scrollbar-thumb {
 @media(max-width:768px){
 
   .sqf-form-section{
-    padding:70px 16px;
+    padding:70px 8px;
   }
 
   .sqf-form-panel{
@@ -3334,4 +3334,20 @@ body::-webkit-scrollbar-thumb {
 
 .footer-credit:hover strong{
   color:#34d399;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.quote-form-wrap .sqf-form-panel{
+    background-color: #ffffff !important;
+    background: #ffffff !important;
 }

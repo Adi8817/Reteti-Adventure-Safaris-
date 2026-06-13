@@ -474,31 +474,31 @@
       name: "Serengeti",
       tag: "Endless plains & predators",
       icon: "camera",
-      image: "assets/images/destinations/img15.jpg",
+      image: "assets/images/destinations/upimage3.png",
     },
     {
       name: "Ngorongoro Crater",
       tag: "A natural wildlife arena",
       icon: "camera",
-      image: "assets/images/destinations/img13.jpg",
+      image: "assets/images/destinations/upimage1.jpg",
     },
     {
       name: "Tarangire",
       tag: "Giant baobabs & elephants",
       icon: "camera",
-      image: "assets/images/destinations/img10.jpg",
+      image: "assets/images/destinations/upimage2.png",
     },
     {
       name: "Lake Manyara",
       tag: "Tree-climbing lions",
       icon: "camera",
-      image: "assets/images/destinations/img12.jpg",
+      image: "assets/images/destinations/upimage4.png",
     },
     {
       name: "Zanzibar",
       tag: "Turquoise beach paradise",
       icon: "camera",
-      image: "assets/images/destinations/zanibar.jpg",
+      image: "assets/images/destinations/upimage5.jpg",
     },
     {
       name: "Lake Natron",
@@ -562,7 +562,7 @@
       icon: "lion",
       title: "Exciting Game Drives",
       text: "Spot lions, elephants, leopards, cheetahs, giraffes and zebras. Morning and evening drives offer the best sightings.",
-      image: "assets/images/activities/activities2.jpg",
+      image: "assets/images/activities/upimage1.jpg",
     },
     {
       icon: "boat",
@@ -574,7 +574,7 @@
       icon: "walk",
       title: "Guided Walking Safaris",
       text: "Step into the wild on foot with expert guides and discover tracks, plants and birds missed on game drives.",
-      image: "assets/images/activities/activities4.jpg",
+      image: "assets/images/activities/upimage2.jpg",
     },
     {
       icon: "balloon",
@@ -592,7 +592,7 @@
       icon: "culture",
       title: "Cultural Village Visits",
       text: "Meet local Maasai communities, learn their traditions and experience authentic African hospitality.",
-      image: "assets/images/activities/activities7.jpg",
+      image: "assets/images/activities/upimage4.jpg",
     },
     {
       icon: "bird",
@@ -610,7 +610,7 @@
       icon: "big5",
       title: "Big Five Safari Experience",
       text: "Challenge yourself to spot Lion, Leopard, Elephant, Rhino and Buffalo — all on one adventure.",
-      image: "assets/images/activities/activities10.jpg",
+      image: "assets/images/activities/upimage5.jpg",
     },
   ];
 
